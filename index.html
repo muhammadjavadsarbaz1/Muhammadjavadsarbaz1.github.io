@@ -1,21 +1,16 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<!DOCTYPE html><html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>طوبی | فروشگاه عطر</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>طوبی | فروشگاه تخصصی عطر</title><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet"><style>
 *{
   box-sizing:border-box;
   margin:0;
   padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
 }
 
 body{
@@ -33,7 +28,7 @@ body{
 header{
   background:#071a35;
   color:white;
-  padding:18px 20px;
+  padding:17px 20px;
   position:sticky;
   top:0;
   z-index:100;
@@ -46,6 +41,7 @@ header{
   display:flex;
   align-items:center;
   justify-content:space-between;
+  gap:20px;
 }
 
 .logo{
@@ -62,12 +58,29 @@ header{
   margin-right:8px;
 }
 
-.cart{
-  background:#fff;
-  color:#071a35;
-  padding:9px 16px;
+.menu{
+  display:flex;
+  gap:22px;
+  align-items:center;
+}
+
+.menu a{
+  color:#dbe4ef;
+  text-decoration:none;
+  font-size:12px;
+  transition:.3s;
+}
+
+.menu a:hover{
+  color:white;
+}
+
+.telegram{
+  background:white;
+  color:#071a35 !important;
+  padding:9px 15px;
   border-radius:30px;
-  font-size:13px;
+  font-weight:600;
 }
 
 /* HERO */
@@ -77,14 +90,8 @@ header{
     radial-gradient(circle at 20% 20%,rgba(255,255,255,.08),transparent 30%),
     linear-gradient(135deg,#06162d,#0d2c50);
   color:white;
-  padding:85px 20px;
+  padding:90px 20px;
   text-align:center;
-}
-
-.hero h1{
-  font-size:38px;
-  font-weight:700;
-  margin-bottom:15px;
 }
 
 .hero-en{
@@ -92,26 +99,40 @@ header{
   font-size:24px;
   letter-spacing:4px;
   color:#cbd5e1;
-  margin-bottom:18px;
+  margin-bottom:16px;
+}
+
+.hero h1{
+  font-size:40px;
+  font-weight:700;
+  margin-bottom:15px;
 }
 
 .hero p{
   color:#dbe4ef;
-  line-height:2.1;
+  line-height:2.2;
   max-width:650px;
   margin:auto;
   font-size:14px;
 }
 
+.hero-buttons{
+  margin-top:30px;
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
 .hero-btn{
   display:inline-block;
-  margin-top:30px;
   background:white;
   color:#071a35;
-  padding:13px 32px;
+  padding:13px 30px;
   border-radius:30px;
   text-decoration:none;
   font-weight:600;
+  font-size:13px;
   transition:.3s;
 }
 
@@ -119,12 +140,27 @@ header{
   transform:translateY(-2px);
 }
 
-/* SECTION */
+.hero-btn-outline{
+  display:inline-block;
+  border:1px solid rgba(255,255,255,.5);
+  color:white;
+  padding:12px 30px;
+  border-radius:30px;
+  text-decoration:none;
+  font-size:13px;
+  transition:.3s;
+}
+
+.hero-btn-outline:hover{
+  background:rgba(255,255,255,.08);
+}
+
+/* GENERAL SECTION */
 
 .section{
   max-width:1150px;
   margin:auto;
-  padding:60px 20px;
+  padding:65px 20px;
 }
 
 .section-title{
@@ -143,77 +179,37 @@ header{
   font-size:13px;
 }
 
-/* PRODUCTS */
+/* WHY TOUBA */
 
-.products{
+.features{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:22px;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
 }
 
-.product{
+.feature{
   background:white;
+  padding:30px 22px;
   border-radius:20px;
-  overflow:hidden;
-  box-shadow:0 8px 30px rgba(7,26,53,.07);
-  transition:.3s;
-}
-
-.product:hover{
-  transform:translateY(-4px);
-  box-shadow:0 12px 35px rgba(7,26,53,.12);
-}
-
-.product-img{
-  height:270px;
-  background:linear-gradient(145deg,#edf1f5,#dfe5ec);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#7c8795;
-  font-size:13px;
-}
-
-.product-info{
-  padding:20px;
-}
-
-.product h3{
-  color:#071a35;
-  margin-bottom:8px;
-  font-size:19px;
-}
-
-.product-en{
-  font-family:"Cormorant Garamond",serif;
-  font-size:17px;
-  letter-spacing:1px;
-  color:#718096;
-  margin-bottom:8px;
-}
-
-.product p{
-  color:#737b87;
-  font-size:13px;
-  line-height:2;
-  margin-bottom:14px;
-}
-
-.price{
-  font-weight:700;
-  color:#071a35;
-  margin-bottom:14px;
-}
-
-.buy{
-  display:block;
   text-align:center;
-  background:#071a35;
-  color:white;
-  text-decoration:none;
-  padding:11px;
-  border-radius:10px;
-  font-size:13px;
+  box-shadow:0 8px 30px rgba(7,26,53,.06);
+}
+
+.feature-icon{
+  font-size:27px;
+  margin-bottom:15px;
+}
+
+.feature h3{
+  color:#071a35;
+  font-size:16px;
+  margin-bottom:10px;
+}
+
+.feature p{
+  color:#737b87;
+  font-size:12px;
+  line-height:2;
 }
 
 /* ABOUT */
@@ -224,16 +220,89 @@ header{
   line-height:2.2;
   color:#626b78;
   border-radius:22px;
-  padding:35px 25px;
+  padding:40px 25px;
   box-shadow:0 8px 30px rgba(7,26,53,.05);
 }
 
 .about-title{
   font-family:"Cormorant Garamond",serif;
-  font-size:25px;
+  font-size:26px;
   letter-spacing:2px;
   color:#071a35;
+  margin-bottom:14px;
+}
+
+/* GUIDE */
+
+.guide{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.guide-box{
+  background:#071a35;
+  color:white;
+  padding:28px 22px;
+  border-radius:20px;
+}
+
+.guide-number{
+  font-family:"Cormorant Garamond",serif;
+  font-size:30px;
+  color:#b9c6d6;
+  margin-bottom:8px;
+}
+
+.guide-box h3{
+  font-size:16px;
+  margin-bottom:10px;
+}
+
+.guide-box p{
+  color:#cbd5e1;
+  font-size:12px;
+  line-height:2;
+}
+
+/* TELEGRAM */
+
+.order{
+  background:linear-gradient(135deg,#071a35,#0d2c50);
+  color:white;
+  border-radius:25px;
+  padding:50px 25px;
+  text-align:center;
+}
+
+.order h2{
+  font-size:27px;
   margin-bottom:12px;
+}
+
+.order p{
+  color:#dbe4ef;
+  font-size:13px;
+  line-height:2;
+  max-width:600px;
+  margin:auto;
+}
+
+.order-btn{
+  display:inline-block;
+  margin-top:25px;
+  background:white;
+  color:#071a35;
+  text-decoration:none;
+  padding:13px 30px;
+  border-radius:30px;
+  font-size:13px;
+  font-weight:600;
+  transition:.3s;
+}
+
+.order-btn:hover{
+  transform:translateY(-2px);
 }
 
 /* FOOTER */
@@ -242,7 +311,7 @@ footer{
   background:#06162d;
   color:white;
   text-align:center;
-  padding:35px 20px;
+  padding:40px 20px;
   margin-top:20px;
 }
 
@@ -264,198 +333,249 @@ footer p{
   margin-top:15px;
 }
 
+.footer-telegram{
+  display:inline-block;
+  margin-top:15px;
+  color:white;
+  text-decoration:none;
+  font-size:12px;
+}
+
 /* MOBILE */
 
-@media(max-width:600px){
+@media(max-width:700px){
+
+  .menu{
+    gap:8px;
+  }
+
+  .menu a:not(.telegram){
+    display:none;
+  }
 
   .hero{
-    padding:65px 20px;
+    padding:70px 20px;
   }
 
   .hero h1{
-    font-size:30px;
+    font-size:31px;
   }
 
   .hero-en{
     font-size:20px;
   }
 
-  .products{
+  .features,
+  .guide{
     grid-template-columns:1fr;
   }
 
-  .product-img{
-    height:280px;
+  .section{
+    padding:50px 16px;
   }
 
-  .section{
-    padding:45px 16px;
+  .logo{
+    font-size:26px;
   }
 }
-</style>
-</head>
+</style></head><body><header>  <div class="nav"><div>
+  <span class="logo">طوبی</span>
+  <span class="logo-en">TOUBA</span>
+</div>
 
-<body>
+<div class="menu">
 
-<header>
-  <div class="nav">
+  <a href="#about">درباره ما</a>
 
-    <div>
-      <span class="logo">طوبی</span>
-      <span class="logo-en">TOUBA</span>
-    </div>
+  <a href="#guide">راهنمای خرید</a>
 
-    <div class="cart">
-      🛒 سبد خرید
-    </div>
-
-  </div>
-</header>
-
-
-<section class="hero">
-
-  <div class="hero-en">TOUBA PERFUME</div>
-
-  <h1>عطر، امضای شماست.</h1>
-
-  <p>
-    مجموعه‌ای از رایحه‌های خاص و ماندگار
-    برای کسانی که انتخابشان معمولی نیست.
-  </p>
-
-  <a href="#products" class="hero-btn">
-    مشاهده عطرها
+  <a href="https://t.me/Muhammad_sarbaz" class="telegram">
+    ثبت سفارش
   </a>
 
-</section>
+</div>
 
-
-<section class="section" id="products">
-
-  <div class="section-title">
-
-    <h2>منتخب طوبی</h2>
-
-    <p>
-      رایحه‌هایی که ارزش تجربه کردن دارند
-    </p>
-
-  </div>
-
-
-  <div class="products">
-
-
-    <div class="product">
-
-      <div class="product-img">
-        تصویر عطر
-      </div>
-
-      <div class="product-info">
-
-        <h3>نام عطر</h3>
-
-        <div class="product-en">
-          PERFUME NAME
-        </div>
-
-        <p>
-          توضیح کوتاه درباره رایحه،
-          نت‌ها و شخصیت این عطر.
-        </p>
-
-        <div class="price">
-          قیمت: به‌زودی
-        </div>
-
-        <a href="#" class="buy">
-          مشاهده محصول
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <div class="product">
-
-      <div class="product-img">
-        تصویر عطر
-      </div>
-
-      <div class="product-info">
-
-        <h3>نام عطر</h3>
-
-        <div class="product-en">
-          PERFUME NAME
-        </div>
-
-        <p>
-          توضیح کوتاه درباره رایحه،
-          نت‌ها و شخصیت این عطر.
-        </p>
-
-        <div class="price">
-          قیمت: به‌زودی
-        </div>
-
-        <a href="#" class="buy">
-          مشاهده محصول
-        </a>
-
-      </div>
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-<section class="section">
-
-  <div class="about">
-
-    <div class="about-title">
-      ABOUT TOUBA
-    </div>
-
-    <p>
-      طوبی با هدف ارائه عطرهایی خاص،
-      باکیفیت و متمایز شکل گرفته است.
-      <br>
-      برای ما، عطر فقط یک رایحه نیست؛
-      بخشی از شخصیت و خاطره شماست.
-    </p>
-
-  </div>
-
-</section>
-
-
-<footer>
-
-  <div class="footer-logo">
-    طوبی
-  </div>
-
-  <div class="footer-en">
+  </div></header><section class="hero">  <div class="hero-en">
     TOUBA PERFUME
+  </div>  <h1>
+    عطر، امضای شماست.
+  </h1>  <p>
+    انتخابی از میان رایحه‌های خاص،
+    ماندگار و متفاوت؛
+    برای کسانی که رایحه‌شان بخشی از شخصیتشان است.
+  </p>  <div class="hero-buttons"><a href="#about" class="hero-btn">
+  کشف طوبی
+</a>
+
+<a href="https://t.me/Muhammad_sarbaz" class="hero-btn-outline">
+  ثبت سفارش در تلگرام
+</a>
+
+  </div></section><section class="section">  <div class="section-title"><h2>
+  چرا طوبی؟
+</h2>
+
+<p>
+  انتخاب با دقت، ارائه با وسواس
+</p>
+
+  </div>  <div class="features"><div class="feature">
+
+  <div class="feature-icon">
+    ✦
   </div>
 
+  <h3>
+    انتخاب خاص
+  </h3>
+
   <p>
+    رایحه‌هایی با شخصیت متفاوت
+    برای سلیقه‌های خاص و متمایز.
+  </p>
+
+</div>
+
+
+<div class="feature">
+
+  <div class="feature-icon">
+    ◈
+  </div>
+
+  <h3>
+    کیفیت
+  </h3>
+
+  <p>
+    تمرکز طوبی بر کیفیت رایحه
+    و تجربه‌ای ارزشمند برای مشتری است.
+  </p>
+
+</div>
+
+
+<div class="feature">
+
+  <div class="feature-icon">
+    ♢
+  </div>
+
+  <h3>
+    مشاوره رایحه
+  </h3>
+
+  <p>
+    اگر برای انتخاب عطر مطمئن نیستید،
+    قبل از خرید راهنمایی‌تان می‌کنیم.
+  </p>
+
+</div>
+
+  </div></section><section class="section" id="about">  <div class="about"><div class="about-title">
+  ABOUT TOUBA
+</div>
+
+<p>
+  طوبی با هدف ارائه عطرهایی خاص،
+  باکیفیت و متمایز شکل گرفته است.
+  <br>
+  برای ما، عطر فقط یک رایحه نیست؛
+  بخشی از شخصیت، خاطره و حضور شماست.
+</p>
+
+  </div></section><section class="section" id="guide">  <div class="section-title"><h2>
+  راهنمای خرید
+</h2>
+
+<p>
+  خرید از طوبی ساده و مستقیم است
+</p>
+
+  </div>  <div class="guide"><div class="guide-box">
+
+  <div class="guide-number">
+    01
+  </div>
+
+  <h3>
+    انتخاب رایحه
+  </h3>
+
+  <p>
+    عطر موردنظر خود را از میان
+    محصولات طوبی انتخاب کنید.
+  </p>
+
+</div>
+
+
+<div class="guide-box">
+
+  <div class="guide-number">
+    02
+  </div>
+
+  <h3>
+    ثبت سفارش
+  </h3>
+
+  <p>
+    روی دکمه ثبت سفارش بزنید
+    و مستقیماً در تلگرام با ما در ارتباط باشید.
+  </p>
+
+</div>
+
+
+<div class="guide-box">
+
+  <div class="guide-number">
+    03
+  </div>
+
+  <h3>
+    هماهنگی و ارسال
+  </h3>
+
+  <p>
+    جزئیات سفارش، پرداخت و
+    ارسال با شما هماهنگ خواهد شد.
+  </p>
+
+</div>
+
+  </div></section><section class="section">  <div class="order"><h2>
+  آماده انتخاب رایحه‌ات هستی؟
+</h2>
+
+<p>
+  برای ثبت سفارش یا دریافت مشاوره،
+  مستقیماً با طوبی در تلگرام در ارتباط باش.
+</p>
+
+<a
+  href="https://t.me/Muhammad_sarbaz"
+  class="order-btn"
+>
+  ✈ ثبت سفارش در تلگرام
+</a>
+
+  </div></section><footer>  <div class="footer-logo">
+    طوبی
+  </div>  <div class="footer-en">
+    TOUBA PERFUME
+  </div>  <p>
     فروشگاه تخصصی عطر و رایحه
-  </p>
+  </p><a
+href="https://t.me/Muhammad_sarbaz"
+class="footer-telegram"
 
-  <p>
+«»
+
+Telegram: @Muhammad_sarbaz
+
+  </a>  <p>
     © 2026 TOUBA
-  </p>
-
-</footer>
-
-</body>
+  </p></footer></body>
 </html>
