@@ -1,1063 +1,2402 @@
-<!DOCTYPE html>  <html lang="fa" dir="rtl">  <head>  
-<meta charset="UTF-8">  
-<meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>طوبی | فروشگاه تخصصی عطر</title>  <link rel="preconnect" href="https://fonts.googleapis.com">  
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">  <style>  
-  
-*{  
-  box-sizing:border-box;  
-  margin:0;  
-  padding:0;  
-}  
-  
-html{  
-  scroll-behavior:smooth;  
-}  
-  
-body{  
-  font-family:"Vazirmatn",sans-serif;  
-  background:#f7f8fa;  
-  color:#101828;  
-}  
-  
-.english{  
-  font-family:"Cormorant Garamond",serif;  
-}  
-  
-/* ================= HEADER ================= */  
-  
-header{  
-  background:#071a35;  
-  color:white;  
-  padding:17px 20px;  
-  position:sticky;  
-  top:0;  
-  z-index:100;  
-  box-shadow:0 4px 20px rgba(0,0,0,.18);  
-}  
-  
-.nav{  
-  max-width:1150px;  
-  margin:auto;  
-  display:flex;  
-  align-items:center;  
-  justify-content:space-between;  
-  gap:20px;  
-}  
-  
-.logo{  
-  font-size:29px;  
-  font-weight:700;  
-  letter-spacing:-1px;  
-}  
-  
-.logo-en{  
-  font-family:"Cormorant Garamond",serif;  
-  font-size:15px;  
-  letter-spacing:3px;  
-  color:#cbd5e1;  
-  margin-right:8px;  
-}  
-  
-.menu{  
-  display:flex;  
-  gap:22px;  
-  align-items:center;  
-}  
-  
-.menu a{  
-  color:#dbe4ef;  
-  text-decoration:none;  
-  font-size:12px;  
-  transition:.3s;  
-}  
-  
-.menu a:hover{  
-  color:white;  
-}  
-  
-.telegram{  
-  background:white;  
-  color:#071a35 !important;  
-  padding:9px 15px;  
-  border-radius:30px;  
-  font-weight:600;  
-}  
-  
-/* ================= HERO ================= */  
-  
-.hero{  
-  background:  
-    radial-gradient(circle at 20% 20%,rgba(255,255,255,.08),transparent 30%),  
-    linear-gradient(135deg,#06162d,#0d2c50);  
-  color:white;  
-  padding:90px 20px;  
-  text-align:center;  
-}  
-  
-.hero-en{  
-  font-family:"Cormorant Garamond",serif;  
-  font-size:24px;  
-  letter-spacing:4px;  
-  color:#cbd5e1;  
-  margin-bottom:16px;  
-}  
-  
-.hero h1{  
-  font-size:40px;  
-  font-weight:700;  
-  margin-bottom:15px;  
-}  
-  
-.hero p{  
-  color:#dbe4ef;  
-  line-height:2.2;  
-  max-width:650px;  
-  margin:auto;  
-  font-size:14px;  
-}  
-  
-.hero-buttons{  
-  margin-top:30px;  
-  display:flex;  
-  justify-content:center;  
-  gap:12px;  
-  flex-wrap:wrap;  
-}  
-  
-.hero-btn{  
-  display:inline-block;  
-  background:white;  
-  color:#071a35;  
-  padding:13px 30px;  
-  border-radius:30px;  
-  text-decoration:none;  
-  font-weight:600;  
-  font-size:13px;  
-  transition:.3s;  
-}  
-  
-.hero-btn:hover{  
-  transform:translateY(-2px);  
-}  
-  
-.hero-btn-outline{  
-  display:inline-block;  
-  border:1px solid rgba(255,255,255,.5);  
-  color:white;  
-  padding:12px 30px;  
-  border-radius:30px;  
-  text-decoration:none;  
-  font-size:13px;  
-  transition:.3s;  
-}  
-  
-.hero-btn-outline:hover{  
-  background:rgba(255,255,255,.08);  
-}  
-  
-/* ================= GENERAL SECTION ================= */  
-  
-.section{  
-  max-width:1150px;  
-  margin:auto;  
-  padding:65px 20px;  
-}  
-  
-.section-title{  
-  text-align:center;  
-  margin-bottom:35px;  
-}  
-  
-.section-title h2{  
-  color:#071a35;  
-  font-size:27px;  
-  margin-bottom:8px;  
-}  
-  
-.section-title p{  
-  color:#7b8491;  
-  font-size:13px;  
-}  
-  
-/* ================= WHY TOUBA ================= */  
-  
-.features{  
-  display:grid;  
-  grid-template-columns:repeat(3,1fr);  
-  gap:20px;  
-}  
-  
-.feature{  
-  background:white;  
-  padding:30px 22px;  
-  border-radius:20px;  
-  text-align:center;  
-  box-shadow:0 8px 30px rgba(7,26,53,.06);  
-}  
-  
-.feature-icon{  
-  font-size:27px;  
-  margin-bottom:15px;  
-}  
-  
-.feature h3{  
-  color:#071a35;  
-  font-size:16px;  
-  margin-bottom:10px;  
-}  
-  
-.feature p{  
-  color:#737b87;  
-  font-size:12px;  
-  line-height:2;  
-}  
-  
-/* ================= ABOUT ================= */  
-  
-.about{  
-  background:white;  
-  text-align:center;  
-  line-height:2.2;  
-  color:#626b78;  
-  border-radius:22px;  
-  padding:40px 25px;  
-  box-shadow:0 8px 30px rgba(7,26,53,.05);  
-}  
-  
-.about-title{  
-  font-family:"Cormorant Garamond",serif;  
-  font-size:26px;  
-  letter-spacing:2px;  
-  color:#071a35;  
-  margin-bottom:14px;  
-}  
-  
-/* ================= PRODUCTS ================= */  
-  
-.products{  
-  display:grid;  
-  grid-template-columns:repeat(2,1fr);  
-  gap:25px;  
-  max-width:1000px;  
-  margin:auto;  
-}  
-  
-.product-card{  
-  background:white;  
-  border-radius:24px;  
-  overflow:hidden;  
-  box-shadow:0 10px 35px rgba(7,26,53,.08);  
-  transition:.3s;  
-  border:1px solid #edf0f4;  
-}  
-  
-.product-card:hover{  
-  transform:translateY(-5px);  
-  box-shadow:0 18px 45px rgba(7,26,53,.12);  
-}  
-  
-.product-image{  
-  background:#f4f5f7;  
-  padding:15px;  
-}  
-  
-.product-card img{  
-  width:100%;  
-  height:340px;  
-  object-fit:cover;  
-  display:block;  
-  border-radius:17px;  
-}  
-  
-.product-content{  
-  padding:25px;  
-  text-align:right;  
-}  
-  
-.product-content h3{  
-  color:#071a35;  
-  font-family:"Cormorant Garamond",serif;  
-  font-size:25px;  
-  line-height:1.2;  
-  margin-bottom:7px;  
-  direction:ltr;  
-  text-align:left;  
-}  
-  
-.product-name{  
-  color:#7b8491;  
-  font-size:13px;  
-  margin-bottom:18px;  
-}  
-  
-.details-btn{  
-  width:100%;  
-  border:1px solid #dbe2ea;  
-  background:#f7f8fa;  
-  color:#071a35;  
-  padding:12px 15px;  
-  border-radius:12px;  
-  font-family:"Vazirmatn",sans-serif;  
-  cursor:pointer;  
-  font-size:12px;  
-  transition:.3s;  
-}  
-  
-.details-btn:hover{  
-  background:#071a35;  
-  color:white;  
-  border-color:#071a35;  
-}  
-  
-.product-details{  
-  display:none;  
-  padding:17px 3px 3px;  
-}  
-  
-.product-details.show{  
-  display:block;  
-}  
-  
-.product-details p{  
-  color:#626b78;  
-  font-size:12px;  
-  line-height:2.25;  
-  margin-bottom:13px;  
-}  
-  
-.product-details strong{  
-  color:#071a35;  
-}  
-  
-.price-check{  
-  margin-top:18px;  
-  padding:13px;  
-  border-top:1px solid #edf0f4;  
-  border-bottom:1px solid #edf0f4;  
-  color:#071a35;  
-  font-size:12px;  
-  font-weight:600;  
-  text-align:center;  
-}  
-  
-.product-btn{  
-  display:block;  
-  margin-top:14px;  
-  background:#071a35;  
-  color:white;  
-  text-decoration:none;  
-  text-align:center;  
-  padding:13px 15px;  
-  border-radius:12px;  
-  font-size:12px;  
-  transition:.3s;  
-}  
-  
-.product-btn:hover{  
-  background:#0d2c50;  
-  transform:translateY(-2px);  
-}  
-  
-/* ================= GUIDE ================= */  
-  
-.guide{  
-  display:grid;  
-  grid-template-columns:repeat(3,1fr);  
-  gap:20px;  
-}  
-  
-.guide-box{  
-  background:#071a35;  
-  color:white;  
-  padding:28px 22px;  
-  border-radius:20px;  
-}  
-  
-.guide-number{  
-  font-family:"Cormorant Garamond",serif;  
-  font-size:30px;  
-  color:#b9c6d6;  
-  margin-bottom:8px;  
-}  
-  
-.guide-box h3{  
-  font-size:16px;  
-  margin-bottom:10px;  
-}  
-  
-.guide-box p{  
-  color:#cbd5e1;  
-  font-size:12px;  
-  line-height:2;  
-}  
-  
-/* ================= RULES ================= */  
-  
-.rules-box{  
-  background:white;  
-  border-radius:22px;  
-  padding:10px 28px;  
-  box-shadow:0 8px 30px rgba(7,26,53,.06);  
-}  
-  
-.rule-item{  
-  padding:24px 5px;  
-  border-bottom:1px solid #e7ebf0;  
-}  
-  
-.rule-item:last-child{  
-  border-bottom:none;  
-}  
-  
-.rule-item h3{  
-  color:#071a35;  
-  font-size:16px;  
-  margin-bottom:10px;  
-}  
-  
-.rule-item p{  
-  color:#626b78;  
-  font-size:12px;  
-  line-height:2.2;  
-}  
-  
-.rule-item strong{  
-  color:#071a35;  
-}  
-  
-/* ================= TELEGRAM ================= */  
-  
-.order{  
-  background:linear-gradient(135deg,#071a35,#0d2c50);  
-  color:white;  
-  border-radius:25px;  
-  padding:50px 25px;  
-  text-align:center;  
-}  
-  
-.order h2{  
-  font-size:27px;  
-  margin-bottom:12px;  
-}  
-  
-.order p{  
-  color:#dbe4ef;  
-  font-size:13px;  
-  line-height:2;  
-  max-width:600px;  
-  margin:auto;  
-}  
-  
-.order-btn{  
-  display:inline-block;  
-  margin-top:25px;  
-  background:white;  
-  color:#071a35;  
-  text-decoration:none;  
-  padding:13px 30px;  
-  border-radius:30px;  
-  font-size:13px;  
-  font-weight:600;  
-  transition:.3s;  
-}  
-  
-.order-btn:hover{  
-  transform:translateY(-2px);  
-}  
-  
-/* ================= FOOTER ================= */  
-  
-footer{  
-  background:#06162d;  
-  color:white;  
-  text-align:center;  
-  padding:40px 20px;  
-  margin-top:20px;  
-}  
-  
-.footer-logo{  
-  font-size:25px;  
-  font-weight:700;  
-}  
-  
-.footer-en{  
-  font-family:"Cormorant Garamond",serif;  
-  letter-spacing:4px;  
-  color:#aebccc;  
-  margin-top:5px;  
-}  
-  
-footer p{  
-  color:#9eabbc;  
-  font-size:12px;  
-  margin-top:15px;  
-}  
-  
-.footer-telegram{  
-  display:inline-block;  
-  margin-top:15px;  
-  color:white;  
-  text-decoration:none;  
-  font-size:12px;  
-}  
-  
-/* ================= MOBILE ================= */  
-  
-@media(max-width:700px){  
-  
-  .menu{  
-    gap:8px;  
-  }  
-  
-  .menu a:not(.telegram){  
-    display:none;  
-  }  
-  
-  .hero{  
-    padding:70px 20px;  
-  }  
-  
-  .hero h1{  
-    font-size:31px;  
-  }  
-  
-  .hero-en{  
-    font-size:20px;  
-  }  
-  
-  .features,  
-  .guide{  
-    grid-template-columns:1fr;  
-  }  
-  
-  .products{  
-    grid-template-columns:1fr;  
-    gap:20px;  
-  }  
-  
-  .product-card img{  
-    height:330px;  
-  }  
-  
-  .section{  
-    padding:50px 16px;  
-  }  
-  
-  .logo{  
-    font-size:26px;  
-  }  
-  
-  .rules-box{  
-    padding:8px 18px;  
-  }  
-  
-  .product-content{  
-    padding:22px 20px;  
-  }  
-  
-  .product-content h3{  
-    font-size:24px;  
-  }  
-}  
-  
-</style>  </head>  <body>  <!-- ================= HEADER ================= -->  <header>    <div class="nav">  <div>  
-  <span class="logo">طوبی</span>  
-  <span class="logo-en">TOUBA</span>  
-</div>  
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<div class="menu">  
+<title>TOUBA — طوبی | عطرهای منتخب</title>
 
-  <a href="#about">درباره ما</a>  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <a href="#products">محصولات</a>  
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <a href="#guide">راهنمای خرید</a>  
+<style>
 
-  <a href="#rules">قوانین خرید</a>  
+/* =========================================================
+   TOUBA — LUXURY PERFUME EXPERIENCE
+   ========================================================= */
 
-  <a href="https://t.me/Muhammad_sarbaz" class="telegram">  
-    ثبت سفارش  
-  </a>  
+:root{
+    --navy:#061426;
+    --navy2:#091d34;
+    --navy3:#0d2944;
+
+    --cream:#f3efe7;
+    --white:#ffffff;
+    --muted:#9ba8b5;
+
+    --line:rgba(255,255,255,.11);
+    --line-dark:rgba(6,20,38,.12);
+
+    --serif:"Cormorant Garamond",serif;
+    --sans:"Vazirmatn",sans-serif;
+
+    --radius:2px;
+    --transition:.5s cubic-bezier(.2,.8,.2,1);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--navy);
+    color:var(--white);
+    font-family:var(--sans);
+    overflow-x:hidden;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button{
+    font-family:inherit;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+.container{
+    width:min(1320px, calc(100% - 48px));
+    margin:auto;
+}
+
+.section{
+    padding:140px 0;
+}
+
+.eyebrow{
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    font-size:11px;
+    letter-spacing:3px;
+    color:#aeb8c2;
+    text-transform:uppercase;
+}
+
+.eyebrow::before{
+    content:"";
+    width:34px;
+    height:1px;
+    background:#8e9ba8;
+}
+
+.serif{
+    font-family:var(--serif);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header{
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+
+    height:88px;
+
+    z-index:1000;
+
+    transition:.4s ease;
+
+    border-bottom:1px solid transparent;
+}
+
+header.scrolled{
+    height:70px;
+    background:rgba(6,20,38,.88);
+    backdrop-filter:blur(18px);
+    border-bottom-color:var(--line);
+}
+
+.nav{
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    flex-direction:column;
+    line-height:.8;
+}
+
+.logo-fa{
+    font-size:25px;
+    font-weight:700;
+    letter-spacing:-1px;
+}
+
+.logo-en{
+    margin-top:9px;
+    font-family:var(--serif);
+    font-size:12px;
+    letter-spacing:5px;
+    opacity:.72;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:38px;
+}
+
+.nav-links a{
+    position:relative;
+    color:#c3ccd4;
+    font-size:12px;
+    transition:.3s ease;
+}
+
+.nav-links a:hover{
+    color:white;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    bottom:-8px;
+    right:0;
+    width:0;
+    height:1px;
+    background:white;
+    transition:.35s ease;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.nav-order{
+    border:1px solid rgba(255,255,255,.3);
+    padding:12px 20px;
+    font-size:11px;
+    transition:.4s ease;
+}
+
+.nav-order:hover{
+    background:white;
+    color:var(--navy);
+}
+
+.menu-btn{
+    display:none;
+    background:none;
+    border:0;
+    color:white;
+    font-size:24px;
+    cursor:pointer;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 72% 45%,
+            rgba(35,76,112,.25),
+            transparent 34%
+        ),
+        var(--navy);
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(255,255,255,.025) 50%,
+            transparent 100%
+        );
+
+    pointer-events:none;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    align-items:center;
+
+    min-height:100vh;
+
+    gap:40px;
+}
+
+.hero-copy{
+    position:relative;
+    z-index:2;
+    padding-top:50px;
+}
+
+.hero-kicker{
+    font-size:11px;
+    letter-spacing:4px;
+    color:#94a2b0;
+    margin-bottom:27px;
+}
+
+.hero-title{
+    font-size:clamp(64px, 8vw, 126px);
+    line-height:.92;
+    font-weight:800;
+    letter-spacing:-5px;
+}
+
+.hero-title span{
+    display:block;
+}
+
+.hero-title .thin{
+    font-weight:300;
+}
+
+.hero-description{
+    width:min(470px,100%);
+    margin-top:38px;
+
+    color:#9caab7;
+    font-size:14px;
+    line-height:2.1;
+    font-weight:300;
+}
+
+.hero-actions{
+    display:flex;
+    align-items:center;
+    gap:22px;
+    margin-top:42px;
+}
+
+.btn-primary{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    min-width:160px;
+    height:54px;
+
+    background:var(--cream);
+    color:var(--navy);
+
+    font-size:12px;
+    font-weight:600;
+
+    transition:var(--transition);
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+    box-shadow:0 18px 40px rgba(0,0,0,.25);
+}
+
+.btn-ghost{
+    font-size:12px;
+    color:#b5c0ca;
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.btn-ghost span{
+    font-size:18px;
+    transition:.3s;
+}
+
+.btn-ghost:hover span{
+    transform:translateX(-6px);
+}
+
+/* =========================================================
+   HERO PRODUCT VISUAL
+   ========================================================= */
+
+.hero-visual{
+    position:relative;
+    height:650px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.hero-circle{
+    position:absolute;
+
+    width:510px;
+    height:510px;
+
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:50%;
+}
+
+.hero-circle::before{
+    content:"";
+    position:absolute;
+    inset:45px;
+
+    border:1px solid rgba(255,255,255,.055);
+    border-radius:50%;
+}
+
+.hero-product{
+    position:relative;
+    z-index:2;
+
+    width:390px;
+
+    filter:
+        drop-shadow(0 35px 35px rgba(0,0,0,.45))
+        drop-shadow(0 0 35px rgba(100,140,170,.08));
+
+    animation:floatBottle 6s ease-in-out infinite;
+}
+
+@keyframes floatBottle{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-14px);
+    }
+}
+
+.hero-side-text{
+    position:absolute;
+    left:0;
+    bottom:70px;
+
+    font-family:var(--serif);
+    font-size:13px;
+    letter-spacing:5px;
+    color:#697888;
+
+    writing-mode:vertical-rl;
+    transform:rotate(180deg);
+}
+
+.hero-number{
+    position:absolute;
+    right:0;
+    top:120px;
+
+    font-family:var(--serif);
+    font-size:13px;
+    letter-spacing:3px;
+    color:#637486;
+}
+
+/* =========================================================
+   MARQUEE
+   ========================================================= */
+
+.marquee{
+    overflow:hidden;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+
+    background:#081a2e;
+}
+
+.marquee-track{
+    width:max-content;
+
+    display:flex;
+    align-items:center;
+
+    padding:21px 0;
+
+    animation:marquee 28s linear infinite;
+}
+
+.marquee-item{
+    display:flex;
+    align-items:center;
+    gap:32px;
+
+    margin-left:70px;
+
+    color:#718091;
+
+    font-family:var(--serif);
+    font-size:17px;
+    letter-spacing:3px;
+    white-space:nowrap;
+}
+
+.marquee-dot{
+    width:4px;
+    height:4px;
+    background:#7c8a98;
+    border-radius:50%;
+}
+
+@keyframes marquee{
+    to{
+        transform:translateX(50%);
+    }
+}
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.intro{
+    background:var(--cream);
+    color:var(--navy);
+}
+
+.intro-grid{
+    display:grid;
+    grid-template-columns:.6fr 1.4fr;
+    gap:100px;
+    align-items:start;
+}
+
+.intro-number{
+    font-family:var(--serif);
+    font-size:18px;
+    color:#68737d;
+}
+
+.intro-title{
+    max-width:920px;
+
+    font-size:clamp(38px,5vw,72px);
+    line-height:1.15;
+
+    font-weight:700;
+    letter-spacing:-2px;
+}
+
+.intro-title span{
+    font-weight:300;
+}
+
+.intro-text{
+    max-width:650px;
+
+    margin-top:38px;
+
+    color:#56616c;
+    font-size:14px;
+    line-height:2.2;
+}
+
+/* =========================================================
+   PRODUCTS
+   ========================================================= */
+
+.products-section{
+    background:var(--navy);
+}
+
+.section-heading{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+
+    margin-bottom:70px;
+}
+
+.section-title{
+    margin-top:18px;
+
+    font-size:clamp(42px,5vw,72px);
+    line-height:.95;
+
+    font-weight:800;
+    letter-spacing:-3px;
+}
+
+.section-title span{
+    font-family:var(--serif);
+    font-weight:400;
+    letter-spacing:0;
+}
+
+.view-all{
+    font-size:12px;
+    color:#8f9ca8;
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.view-all span{
+    transition:.3s;
+}
+
+.view-all:hover span{
+    transform:translateX(-7px);
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:28px;
+}
+
+.product-card{
+    position:relative;
+    background:#0a2037;
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    transition:var(--transition);
+}
+
+.product-card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(255,255,255,.15);
+}
+
+.product-image{
+    height:590px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(55,91,120,.18),
+            transparent 60%
+        );
+}
+
+.product-image::after{
+    content:"";
+
+    position:absolute;
+    width:70%;
+    height:40px;
+
+    bottom:45px;
+
+    background:rgba(0,0,0,.45);
+
+    filter:blur(25px);
+    border-radius:50%;
+}
+
+.product-image img{
+    position:relative;
+    z-index:2;
+
+    width:72%;
+    max-height:530px;
+
+    object-fit:contain;
+
+    transition:transform .8s cubic-bezier(.2,.8,.2,1);
+}
+
+.product-card:hover .product-image img{
+    transform:scale(1.055) translateY(-8px);
+}
+
+.product-index{
+    position:absolute;
+    top:24px;
+    right:25px;
+
+    font-family:var(--serif);
+    font-size:13px;
+    color:#718092;
+
+    z-index:4;
+}
+
+.product-type{
+    position:absolute;
+    top:24px;
+    left:25px;
+
+    font-size:9px;
+    letter-spacing:2px;
+
+    color:#758493;
+
+    z-index:4;
+}
+
+.product-info{
+    padding:30px 32px 34px;
+
+    border-top:1px solid rgba(255,255,255,.07);
+}
+
+.product-meta{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:12px;
+
+    color:#758392;
+    font-size:10px;
+}
+
+.product-name{
+    font-size:26px;
+    font-weight:700;
+    letter-spacing:-1px;
+}
+
+.product-name-en{
+    margin-top:3px;
+
+    font-family:var(--serif);
+    font-size:17px;
+    letter-spacing:2px;
+    color:#9ca8b3;
+}
+
+.product-bottom{
+    margin-top:25px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.product-note{
+    font-size:11px;
+    color:#8996a3;
+}
+
+.product-order{
+    width:46px;
+    height:46px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid rgba(255,255,255,.17);
+
+    transition:.35s;
+}
+
+.product-order span{
+    font-size:20px;
+}
+
+.product-order:hover{
+    background:var(--cream);
+    color:var(--navy);
+}
+
+/* =========================================================
+   STATEMENT
+   ========================================================= */
+
+.statement{
+    background:#091d33;
+    position:relative;
+    overflow:hidden;
+}
+
+.statement::before{
+    content:"TOUBA";
+
+    position:absolute;
+    left:-30px;
+    bottom:-80px;
+
+    font-family:var(--serif);
+    font-size:240px;
+
+    color:rgba(255,255,255,.018);
+    line-height:1;
+}
+
+.statement-inner{
+    position:relative;
+    z-index:2;
+
+    max-width:1000px;
+    margin:auto;
+
+    text-align:center;
+}
+
+.statement-title{
+    margin-top:30px;
+
+    font-size:clamp(40px,6vw,82px);
+    line-height:1.08;
+
+    font-weight:700;
+    letter-spacing:-3px;
+}
+
+.statement-title span{
+    font-family:var(--serif);
+    font-weight:400;
+}
+
+.statement-text{
+    max-width:620px;
+    margin:35px auto 0;
+
+    color:#8795a3;
+    font-size:13px;
+    line-height:2.3;
+}
+
+/* =========================================================
+   VALUES
+   ========================================================= */
+
+.values{
+    background:var(--cream);
+    color:var(--navy);
+}
+
+.values-heading{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+
+    margin-bottom:70px;
+}
+
+.values-heading .eyebrow{
+    color:#68727b;
+}
+
+.values-heading .eyebrow::before{
+    background:#68727b;
+}
+
+.values-title{
+    font-size:clamp(42px,5vw,70px);
+    line-height:1;
+    letter-spacing:-3px;
+}
+
+.values-title span{
+    font-family:var(--serif);
+    font-weight:400;
+}
+
+.values-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+
+    border-top:1px solid var(--line-dark);
+    border-bottom:1px solid var(--line-dark);
+}
+
+.value{
+    padding:55px 35px;
+    min-height:300px;
+
+    border-left:1px solid var(--line-dark);
+}
+
+.value:last-child{
+    border-left:0;
+}
+
+.value-number{
+    font-family:var(--serif);
+    font-size:18px;
+    color:#89929a;
+}
+
+.value-icon{
+    font-size:28px;
+    margin-top:35px;
+}
+
+.value-title{
+    margin-top:18px;
+    font-size:20px;
+    font-weight:700;
+}
+
+.value-text{
+    margin-top:15px;
+
+    color:#69747e;
+    font-size:12px;
+    line-height:2;
+}
+
+/* =========================================================
+   GUIDE
+   ========================================================= */
+
+.guide{
+    background:var(--navy);
+}
+
+.guide-grid{
+    display:grid;
+    grid-template-columns:.75fr 1.25fr;
+    gap:100px;
+}
+
+.guide-title{
+    margin-top:20px;
+
+    font-size:clamp(42px,5vw,68px);
+    line-height:1;
+    letter-spacing:-3px;
+}
+
+.guide-title span{
+    font-family:var(--serif);
+    font-weight:400;
+}
+
+.guide-intro{
+    margin-top:28px;
+
+    color:#8997a5;
+    font-size:13px;
+    line-height:2;
+}
+
+.steps{
+    border-top:1px solid var(--line);
+}
+
+.step{
+    display:grid;
+    grid-template-columns:70px 1fr 30px;
+    align-items:center;
+
+    min-height:125px;
+
+    border-bottom:1px solid var(--line);
+
+    transition:.35s;
+}
+
+.step:hover{
+    padding-right:14px;
+    background:rgba(255,255,255,.015);
+}
+
+.step-num{
+    font-family:var(--serif);
+    color:#657586;
+    font-size:18px;
+}
+
+.step-title{
+    font-size:17px;
+    font-weight:600;
+}
+
+.step-text{
+    margin-top:7px;
+
+    color:#768696;
+    font-size:11px;
+}
+
+.step-arrow{
+    font-size:20px;
+    color:#738292;
+}
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.cta{
+    padding:150px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f3efe7 0%,
+            #ebe6dc 100%
+        );
+
+    color:var(--navy);
+}
+
+.cta-inner{
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+
+    gap:50px;
+}
+
+.cta-title{
+    margin-top:25px;
+
+    font-size:clamp(48px,7vw,100px);
+    line-height:.9;
+
+    font-weight:800;
+    letter-spacing:-5px;
+}
+
+.cta-title span{
+    display:block;
+    font-family:var(--serif);
+    font-weight:400;
+    letter-spacing:0;
+}
+
+.cta-copy{
+    max-width:370px;
+
+    color:#626b73;
+    font-size:12px;
+    line-height:2;
+}
+
+.cta-button{
+    display:inline-flex;
+
+    margin-top:30px;
+
+    background:var(--navy);
+    color:white;
+
+    padding:18px 35px;
+
+    font-size:12px;
+
+    transition:.4s;
+}
+
+.cta-button:hover{
+    transform:translateY(-4px);
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer{
+    background:#04101f;
+
+    padding:70px 0 30px;
+}
+
+.footer-top{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+
+    gap:40px;
+
+    padding-bottom:70px;
+
+    border-bottom:1px solid var(--line);
+}
+
+.footer-logo{
+    font-size:34px;
+    font-weight:800;
+}
+
+.footer-logo-en{
+    font-family:var(--serif);
+    letter-spacing:7px;
+    font-size:14px;
+    color:#82909d;
+    margin-top:7px;
+}
+
+.footer-description{
+    max-width:280px;
+
+    margin-top:20px;
+
+    color:#687888;
+    font-size:11px;
+    line-height:2;
+}
+
+.footer-heading{
+    color:#d9dfe4;
+    font-size:11px;
+    margin-bottom:22px;
+}
+
+.footer-links{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.footer-links a{
+    width:max-content;
+
+    color:#718090;
+    font-size:11px;
+
+    transition:.3s;
+}
+
+.footer-links a:hover{
+    color:white;
+    transform:translateX(-4px);
+}
+
+.footer-bottom{
+    display:flex;
+    justify-content:space-between;
+
+    padding-top:25px;
+
+    color:#526273;
+    font-size:9px;
+}
+
+.footer-bottom span{
+    font-family:var(--serif);
+    letter-spacing:2px;
+}
+
+/* =========================================================
+   REVEAL ANIMATION
+   ========================================================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(30px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+.mobile-menu{
+    position:fixed;
+    inset:0;
+
+    z-index:999;
+
+    background:var(--navy);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.4s ease;
+}
+
+.mobile-menu.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.mobile-links{
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:25px;
+}
+
+.mobile-links a{
+    font-size:25px;
+    font-weight:700;
+}
+
+.mobile-links .serif-link{
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:20px;
+    letter-spacing:3px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:900px){
+
+    .container{
+        width:min(100% - 32px, 700px);
+    }
+
+    .section{
+        padding:95px 0;
+    }
+
+    header{
+        height:72px;
+    }
+
+    header.scrolled{
+        height:65px;
+    }
+
+    .nav-links,
+    .nav-order{
+        display:none;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero{
+        min-height:auto;
+        padding-top:100px;
+    }
+
+    .hero-grid{
+        grid-template-columns:1fr;
+        min-height:auto;
+
+        padding:65px 0 90px;
+    }
+
+    .hero-copy{
+        text-align:center;
+        padding-top:0;
+    }
+
+    .hero-kicker{
+        letter-spacing:3px;
+    }
+
+    .hero-title{
+        font-size:clamp(65px,18vw,105px);
+        letter-spacing:-4px;
+    }
+
+    .hero-description{
+        margin:30px auto 0;
+    }
+
+    .hero-actions{
+        justify-content:center;
+    }
+
+    .hero-visual{
+        height:480px;
+        margin-top:10px;
+    }
+
+    .hero-circle{
+        width:360px;
+        height:360px;
+    }
+
+    .hero-product{
+        width:300px;
+    }
+
+    .hero-side-text,
+    .hero-number{
+        display:none;
+    }
+
+    .intro-grid{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .intro-title{
+        font-size:42px;
+    }
+
+    .section-heading{
+        align-items:start;
+        flex-direction:column;
+        gap:25px;
+    }
+
+    .product-grid{
+        grid-template-columns:1fr;
+    }
+
+    .product-image{
+        height:500px;
+    }
+
+    .values-heading{
+        flex-direction:column;
+        align-items:start;
+        gap:25px;
+    }
+
+    .values-grid{
+        grid-template-columns:1fr;
+    }
+
+    .value{
+        border-left:0;
+        border-bottom:1px solid var(--line-dark);
+    }
+
+    .value:last-child{
+        border-bottom:0;
+    }
+
+    .guide-grid{
+        grid-template-columns:1fr;
+        gap:60px;
+    }
+
+    .cta-inner{
+        flex-direction:column;
+        align-items:start;
+    }
+
+    .footer-top{
+        grid-template-columns:1fr;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        gap:12px;
+    }
+}
+
+@media(max-width:480px){
+
+    .container{
+        width:calc(100% - 28px);
+    }
+
+    .hero-title{
+        font-size:67px;
+    }
+
+    .hero-description{
+        font-size:12px;
+    }
+
+    .hero-actions{
+        flex-direction:column;
+        gap:18px;
+    }
+
+    .hero-visual{
+        height:390px;
+    }
+
+    .hero-circle{
+        width:290px;
+        height:290px;
+    }
+
+    .hero-circle::before{
+        inset:30px;
+    }
+
+    .hero-product{
+        width:245px;
+    }
+
+    .product-image{
+        height:410px;
+    }
+
+    .product-image img{
+        width:80%;
+    }
+
+    .product-info{
+        padding:25px 22px 28px;
+    }
+
+    .product-name{
+        font-size:23px;
+    }
+
+    .statement-title{
+        font-size:42px;
+        letter-spacing:-2px;
+    }
+
+    .step{
+        grid-template-columns:45px 1fr 20px;
+    }
+
+    .cta{
+        padding:100px 0;
+    }
+
+    .cta-title{
+        font-size:60px;
+        letter-spacing:-3px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+     ===================================================== -->
+
+<header id="header">
+
+    <div class="container nav">
+
+        <a href="#home" class="logo">
+
+            <span class="logo-fa">طوبی</span>
+
+            <span class="logo-en">
+                TOUBA
+            </span>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="#products">
+                محصولات
+            </a>
+
+            <a href="#about">
+                درباره طوبی
+            </a>
+
+            <a href="#guide">
+                راهنمای خرید
+            </a>
+
+            <a href="#values">
+                چرا طوبی؟
+            </a>
+
+        </nav>
+
+
+        <a
+            class="nav-order"
+            href="https://t.me/Muhammad_sarbaz"
+            target="_blank"
+        >
+            ثبت سفارش
+        </a>
+
+
+        <button
+            class="menu-btn"
+            onclick="openMenu()"
+        >
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     MOBILE MENU
+     ===================================================== -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <div class="mobile-links">
+
+        <a href="#products" onclick="closeMenu()">
+            محصولات
+        </a>
+
+        <a href="#about" onclick="closeMenu()">
+            درباره طوبی
+        </a>
+
+        <a href="#guide" onclick="closeMenu()">
+            راهنمای خرید
+        </a>
+
+        <a href="#values" onclick="closeMenu()">
+            چرا طوبی؟
+        </a>
+
+        <a
+            class="serif-link"
+            href="https://t.me/Muhammad_sarbaz"
+            target="_blank"
+        >
+            ORDER VIA TELEGRAM
+        </a>
+
+    </div>
 
 </div>
 
-  </div>  </header>  <!-- ================= HERO ================= -->  <section class="hero">    <div class="hero-en">  
-    TOUBA PERFUME  
-  </div>    <h1>  
-    عطر، امضای شماست.  
-  </h1>    <p>  
-    انتخابی از میان رایحه‌های خاص،  
-    ماندگار و متفاوت؛  
-    برای کسانی که رایحه‌شان بخشی از شخصیتشان است.  
-  </p>    <div class="hero-buttons">  <a href="#products" class="hero-btn">  
-  مشاهده رایحه‌ها  
-</a>  
 
-<a href="https://t.me/Muhammad_sarbaz" class="hero-btn-outline">  
-  ثبت سفارش در تلگرام  
-</a>
+<!-- =====================================================
+     HERO
+     ===================================================== -->
 
-  </div>  </section>  <!-- ================= WHY TOUBA ================= -->  <section class="section">    <div class="section-title">  <h2>  
-  چرا طوبی؟  
-</h2>  
+<main id="home">
 
-<p>  
-  انتخاب با دقت، ارائه با وسواس  
-</p>
+<section class="hero">
 
-  </div>    <div class="features">  <div class="feature">  
-
-  <div class="feature-icon">  
-    ✦  
-  </div>  
-
-  <h3>  
-    انتخاب خاص  
-  </h3>  
-
-  <p>  
-    رایحه‌هایی با شخصیت متفاوت  
-    برای سلیقه‌های خاص و متمایز.  
-  </p>  
-
-</div>  
+    <div class="container hero-grid">
 
 
-<div class="feature">  
+        <div class="hero-copy reveal">
 
-  <div class="feature-icon">  
-    ◈  
-  </div>  
-
-  <h3>  
-    کیفیت  
-  </h3>  
-
-  <p>  
-    تمرکز طوبی بر کیفیت رایحه  
-    و تجربه‌ای ارزشمند برای مشتری است.  
-  </p>  
-
-</div>  
+            <div class="hero-kicker">
+                SELECTED PERFUMES · TOUBA
+            </div>
 
 
-<div class="feature">  
+            <h1 class="hero-title">
 
-  <div class="feature-icon">  
-    ♢  
-  </div>  
+                <span>
+                    عطر
+                </span>
 
-  <h3>  
-    مشاوره رایحه  
-  </h3>  
+                <span class="thin">
+                    برای
+                </span>
 
-  <p>  
-    اگر برای انتخاب عطر مطمئن نیستید،  
-    قبل از خرید راهنمایی‌تان می‌کنیم.  
-  </p>  
+                <span>
+                    ماندن.
+                </span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                طوبی مجموعه‌ای از رایحه‌های منتخب را با تمرکز بر کیفیت،
+                شخصیت و تجربه‌ای متفاوت از عطر ارائه می‌کند.
+
+            </p>
+
+
+            <div class="hero-actions">
+
+                <a
+                    href="#products"
+                    class="btn-primary"
+                >
+                    مشاهده محصولات
+                </a>
+
+
+                <a
+                    href="#about"
+                    class="btn-ghost"
+                >
+
+                    داستان طوبی
+
+                    <span>
+                        ←
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="hero-visual reveal">
+
+            <div class="hero-circle"></div>
+
+
+            <div class="hero-number">
+                01 / 02
+            </div>
+
+
+            <img
+                class="hero-product"
+                src="HAXjgXsPsCBvR0R-MfkNt_5zXAA-9McOSGydRjyriJghgwsMuQ.png"
+                alt="Stronger With You Intensely"
+            >
+
+
+            <div class="hero-side-text">
+                STRONGER WITH YOU INTENSELY
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MARQUEE
+     ===================================================== -->
+
+<div class="marquee">
+
+    <div class="marquee-track">
+
+        <div class="marquee-item">
+            TOUBA
+            <span class="marquee-dot"></span>
+            SELECTED SCENTS
+        </div>
+
+        <div class="marquee-item">
+            طوبی
+            <span class="marquee-dot"></span>
+            رایحه‌های منتخب
+        </div>
+
+        <div class="marquee-item">
+            TOUBA
+            <span class="marquee-dot"></span>
+            SELECTED SCENTS
+        </div>
+
+        <div class="marquee-item">
+            طوبی
+            <span class="marquee-dot"></span>
+            رایحه‌های منتخب
+        </div>
+
+    </div>
 
 </div>
 
-  </div>  </section>  <!-- ================= ABOUT ================= -->  <section class="section" id="about">    <div class="about">  <div class="about-title">  
-  ABOUT TOUBA  
-</div>  
 
-<p>  
-  طوبی با هدف ارائه عطرهایی خاص،  
-  باکیفیت و متمایز شکل گرفته است.  
-  <br>  
-  برای ما، عطر فقط یک رایحه نیست؛  
-  بخشی از شخصیت، خاطره و حضور شماست.  
-</p>
+<!-- =====================================================
+     ABOUT
+     ===================================================== -->
 
-  </div>  </section>  <!-- ================= PRODUCTS ================= -->  <section class="section" id="products">    <div class="section-title">  <h2>  
-  رایحه‌های طوبی  
-</h2>  
+<section class="section intro" id="about">
 
-<p>  
-  انتخابی از میان رایحه‌های خاص و ماندگار  
-</p>
+    <div class="container intro-grid">
 
-  </div>    <div class="products">  <!-- STRONGER WITH YOU INTENSELY -->  
+        <div class="intro-number reveal">
+            01 — ABOUT
+        </div>
 
-<div class="product-card">  
 
-  <div class="product-image">  
+        <div class="reveal">
 
-    <img  
-      src="HAXjgXsPsCBvR0R-MfkNt_5zXAA-9McOSGydRjyriJghgwsMuQ.png"  
-      alt="Stronger With You Intensely"  
-    >  
+            <h2 class="intro-title">
 
-  </div>  
+                عطر فقط یک رایحه نیست؛
 
-  <div class="product-content">  
+                <span>
+                    بخشی از چیزی‌ست که از تو باقی می‌ماند.
+                </span>
 
-    <h3>  
-      Stronger With You Intensely  
-    </h3>  
+            </h2>
 
-    <div class="product-name">  
-      استرانگر ویت یو اینتنسلی  
-    </div>  
 
+            <p class="intro-text">
 
-    <button  
-      class="details-btn"  
-      onclick="this.nextElementSibling.classList.toggle('show')"  
-    >  
-      مشاهده توضیحات  
-    </button>  
+                ما در طوبی تلاش می‌کنیم انتخاب عطر را از یک خرید ساده
+                به یک تجربه تبدیل کنیم؛ از انتخاب رایحه تا کیفیت ساخت
+                و بسته‌بندی، هر جزئیات باید حس یک محصول جدی و باکیفیت
+                را منتقل کند.
 
+            </p>
 
-    <div class="product-details">  
+        </div>
 
-      <p>  
-        رایحه‌ای گرم، شیرین و عمیق با حال‌وهوایی جذاب و  
-        مردانه؛ انتخابی مناسب برای پاییز و زمستان و  
-        موقعیت‌های شبانه.  
-      </p>  
+    </div>
 
-      <p>  
-        فضای وانیلی و شیرین این رایحه در کنار حس گرم و  
-        دلنشین آن، شخصیتی پررنگ و متمایز ایجاد می‌کند؛  
-        گزینه‌ای مناسب برای قرار، مهمانی و استفاده در  
-        هوای خنک.  
-      </p>  
+</section>
 
-      <p>  
-        <strong>  
-          کیفیت طوبی:  
-        </strong>  
-        طوبی در انتخاب مواد اولیه و ترکیب نهایی رایحه،  
-        تمرکز ویژه‌ای روی کیفیت و ایجاد تجربه‌ای  
-        نزدیک به شخصیت رایحه اصلی دارد.  
-      </p>  
 
-    </div>  
+<!-- =====================================================
+     PRODUCTS
+     ===================================================== -->
 
+<section class="section products-section" id="products">
 
-    <div class="price-check">  
-      استعلام قیمت روز  
-    </div>  
+    <div class="container">
 
+        <div class="section-heading reveal">
 
-    <a  
-      href="https://t.me/Muhammad_sarbaz"  
-      class="product-btn"  
-    >  
-      ثبت سفارش  
-    </a>  
+            <div>
 
-  </div>  
+                <div class="eyebrow">
+                    THE COLLECTION
+                </div>
 
-</div>  
+                <h2 class="section-title">
+                    انتخاب‌های
+                    <span>طوبی</span>
+                </h2>
 
+            </div>
 
-<!-- TOM FORD VANILLA SEX -->  
 
-<div class="product-card">  
+            <a href="#products" class="view-all">
+                مشاهده مجموعه
+                <span>←</span>
+            </a>
 
-  <div class="product-image">  
+        </div>
 
-    <img  
-      src="HhPdfl-aeM5RuXdjsTPqk_PHkGo-NMh6uWQRQRGiipZLKo4PUw.png"  
-      alt="Tom Ford Vanilla Sex"  
-    >  
 
-  </div>  
 
-  <div class="product-content">  
+        <div class="product-grid">
 
-    <h3>  
-      Tom Ford Vanilla Sex  
-    </h3>  
 
-    <div class="product-name">  
-      تام فورد وانیلا سکس  
-    </div>  
+            <!-- PRODUCT 01 -->
 
+            <article class="product-card reveal">
 
-    <button  
-      class="details-btn"  
-      onclick="this.nextElementSibling.classList.toggle('show')"  
-    >  
-      مشاهده توضیحات  
-    </button>  
+                <div class="product-image">
 
+                    <div class="product-index">
+                        01
+                    </div>
 
-    <div class="product-details">  
+                    <div class="product-type">
+                        MEN · INTENSE
+                    </div>
 
-      <p>  
-        رایحه‌ای گرم، وانیلی، شیرین و عمیق با شخصیت  
-        لوکس و متفاوت؛ انتخابی مناسب برای پاییز و  
-        زمستان و علاقه‌مندان به رایحه‌های خاص.  
-      </p>  
 
-      <p>  
-        فضای وانیلی و کرمی این رایحه حسی گرم و  
-        دلنشین ایجاد می‌کند و برای استفاده در شب،  
-        قرارها و موقعیت‌های خاص انتخاب جذابی است.  
-      </p>  
+                    <img
+                        src="HAXjgXsPsCBvR0R-MfkNt_5zXAA-9McOSGydRjyriJghgwsMuQ.png"
+                        alt="Stronger With You Intensely"
+                    >
 
-      <p>  
-        <strong>  
-          کیفیت طوبی:  
-        </strong>  
-        طوبی در انتخاب مواد اولیه و ترکیب نهایی رایحه،  
-        تمرکز ویژه‌ای روی کیفیت و ایجاد تجربه‌ای  
-        نزدیک به شخصیت رایحه اصلی دارد.  
-      </p>  
+                </div>
 
-    </div>  
 
+                <div class="product-info">
 
-    <div class="price-check">  
-      استعلام قیمت روز  
-    </div>  
+                    <div class="product-meta">
 
+                        <span>
+                            EMPORIO ARMANI
+                        </span>
 
-    <a  
-      href="https://t.me/Muhammad_sarbaz"  
-      class="product-btn"  
-    >  
-      ثبت سفارش  
-    </a>  
+                        <span>
+                            EDP
+                        </span>
 
-  </div>  
+                    </div>
 
-</div>
 
-  </div>  </section>  <!-- ================= GUIDE ================= -->  <section class="section" id="guide">    <div class="section-title">  <h2>  
-  راهنمای خرید  
-</h2>  
+                    <h3 class="product-name">
+                        استرانگر ویت یو اینتنسلی
+                    </h3>
 
-<p>  
-  خرید از طوبی ساده و مستقیم است  
-</p>
 
-  </div>    <div class="guide">  <div class="guide-box">  
+                    <div class="product-name-en">
+                        STRONGER WITH YOU INTENSELY
+                    </div>
 
-  <div class="guide-number">  
-    01  
-  </div>  
 
-  <h3>  
-    انتخاب رایحه  
-  </h3>  
+                    <div class="product-bottom">
 
-  <p>  
-    عطر موردنظر خود را از میان  
-    محصولات طوبی انتخاب کنید.  
-  </p>  
+                        <div class="product-note">
+                            گرم · شیرین · گرم و عمیق
+                        </div>
 
-</div>  
 
+                        <a
+                            class="product-order"
+                            href="https://t.me/Muhammad_sarbaz"
+                            target="_blank"
+                        >
+                            <span>↗</span>
+                        </a>
 
-<div class="guide-box">  
+                    </div>
 
-  <div class="guide-number">  
-    02  
-  </div>  
+                </div>
 
-  <h3>  
-    ثبت سفارش  
-  </h3>  
+            </article>
 
-  <p>  
-    روی دکمه ثبت سفارش بزنید  
-    و مستقیماً در تلگرام با ما در ارتباط باشید.  
-  </p>  
 
-</div>  
 
+            <!-- PRODUCT 02 -->
 
-<div class="guide-box">  
+            <article class="product-card reveal">
 
-  <div class="guide-number">  
-    03  
-  </div>  
+                <div class="product-image">
 
-  <h3>  
-    هماهنگی و ارسال  
-  </h3>  
+                    <div class="product-index">
+                        02
+                    </div>
 
-  <p>  
-    جزئیات سفارش، پرداخت و  
-    ارسال با شما هماهنگ خواهد شد.  
-  </p>  
+                    <div class="product-type">
+                        UNISEX · GOURMAND
+                    </div>
 
-</div>
 
-  </div>  </section>  <!-- ================= RULES ================= -->  <section class="section" id="rules">    <div class="section-title">  <h2>  
-  قوانین و مقررات خرید  
-</h2>  
+                    <img
+                        src="HhPdfl-aeM5RuXdjsTPqk_PHkGo-NMh6uWQRQRGiipZLKo4PUw.png"
+                        alt="Tom Ford Vanilla Sex"
+                    >
 
-<p>  
-  شرایط خرید از فروشگاه طوبی  
-</p>
+                </div>
 
-  </div>    <div class="rules-box">  <div class="rule-item">  
 
-  <h3>  
-    ۱. ثبت سفارش  
-  </h3>  
+                <div class="product-info">
 
-  <p>  
-    ثبت سفارش از طریق راه‌های ارتباطی اعلام‌شده توسط طوبی انجام می‌شود.  
-    سفارش پس از تأیید نهایی و پرداخت وجه وارد مرحله آماده‌سازی خواهد شد.  
-  </p>  
+                    <div class="product-meta">
 
-</div>  
+                        <span>
+                            TOM FORD
+                        </span>
 
+                        <span>
+                            EDP
+                        </span>
 
-<div class="rule-item">  
+                    </div>
 
-  <h3>  
-    ۲. پرداخت وجه  
-  </h3>  
 
-  <p>  
-    پرداخت سفارش باید به حساب یا کارت اعلام‌شده از سوی طوبی انجام شود.  
-    <strong>  
-      نام صاحب کارت پرداخت‌کننده باید با نام گیرنده بسته یکسان باشد.  
-    </strong>  
-    در صورت پرداخت با کارت شخص دیگر، پیش از پرداخت با طوبی هماهنگ کنید.  
-  </p>  
+                    <h3 class="product-name">
+                        وانیلا سکس
+                    </h3>
 
-</div>  
 
+                    <div class="product-name-en">
+                        VANILLA SEX
+                    </div>
 
-<div class="rule-item">  
 
-  <h3>  
-    ۳. قیمت محصولات  
-  </h3>  
+                    <div class="product-bottom">
 
-  <p>  
-    قیمت محصولات در زمان ثبت سفارش معتبر است.  
-    سفارش‌هایی که پرداخت آن‌ها نهایی شده باشد، مشمول تغییر قیمت نخواهند شد.  
-  </p>  
+                        <div class="product-note">
+                            وانیلی · خامه‌ای · گرم
+                        </div>
 
-</div>  
 
+                        <a
+                            class="product-order"
+                            href="https://t.me/Muhammad_sarbaz"
+                            target="_blank"
+                        >
+                            <span>↗</span>
+                        </a>
 
-<div class="rule-item">  
+                    </div>
 
-  <h3>  
-    ۴. مشخصات و کیفیت محصولات  
-  </h3>  
+                </div>
 
-  <p>  
-    میزان پخش و ماندگاری رایحه می‌تواند با توجه به نوع پوست،  
-    شرایط آب‌وهوایی و نحوه استفاده متفاوت باشد.  
-  </p>  
+            </article>
 
-</div>  
 
+        </div>
 
-<div class="rule-item">  
+    </div>
 
-  <h3>  
-    ۵. تغییر یا لغو سفارش  
-  </h3>  
+</section>
 
-  <p>  
-    درخواست تغییر یا لغو سفارش باید پیش از آماده‌سازی و ارسال  
-    به طوبی اطلاع داده شود.  
-  </p>  
 
-</div>  
+<!-- =====================================================
+     STATEMENT
+     ===================================================== -->
 
+<section class="section statement">
 
-<div class="rule-item">  
+    <div class="container">
 
-  <h3>  
-    ۶. ارسال  
-  </h3>  
+        <div class="statement-inner reveal">
 
-  <p>  
-    مسئولیت صحت نام، شماره تماس، آدرس و کدپستی بر عهده مشتری است.  
-    در صورت اشتباه بودن اطلاعات و برگشت بسته،  
-    هزینه ارسال مجدد بر عهده مشتری خواهد بود.  
-  </p>  
+            <div class="eyebrow" style="justify-content:center;">
+                THE TOUBA PHILOSOPHY
+            </div>
 
-</div>  
 
+            <h2 class="statement-title">
 
-<div class="rule-item">  
+                رایحه‌ای که
+                <span>
+                    شخصیت پیدا می‌کند.
+                </span>
 
-  <h3>  
-    ۷. مرجوعی و تعویض  
-  </h3>  
+            </h2>
 
-  <p>  
-    محصولات بازشده یا استفاده‌شده قابل مرجوعی نیستند.  
-    در صورت آسیب‌دیدگی بسته یا وجود ایراد ظاهری،  
-    موضوع را در سریع‌ترین زمان همراه با تصاویر یا ویدئو به طوبی اطلاع دهید.  
-  </p>  
 
-</div>  
+            <p class="statement-text">
 
+                ما به دنبال شلوغ کردن مجموعه نیستیم.
+                هر رایحه باید دلیل حضور خودش را داشته باشد؛
+                رایحه‌ای که انتخاب می‌کنید باید با شما معنا پیدا کند.
 
-<div class="rule-item">  
+            </p>
 
-  <h3>  
-    ۸. حریم خصوصی  
-  </h3>  
+        </div>
 
-  <p>  
-    اطلاعات مشتری مانند نام، شماره تماس و آدرس صرفاً برای  
-    ثبت، پردازش، ارسال و پیگیری سفارش استفاده خواهد شد.  
-  </p>  
+    </div>
 
-</div>  
+</section>
 
 
-<div class="rule-item">  
+<!-- =====================================================
+     VALUES
+     ===================================================== -->
 
-  <h3>  
-    ۹. تأیید نهایی سفارش  
-  </h3>  
+<section class="section values" id="values">
 
-  <p>  
-    ثبت سفارش و پرداخت وجه به منزله مطالعه و پذیرش  
-    قوانین و مقررات خرید طوبی است.  
-  </p>  
+    <div class="container">
 
-</div>
+        <div class="values-heading reveal">
 
-  </div>  </section>  <!-- ================= TELEGRAM ORDER ================= -->  <section class="section">    <div class="order">  <h2>  
-  آماده انتخاب رایحه‌ات هستی؟  
-</h2>  
+            <div>
 
-<p>  
-  برای ثبت سفارش یا دریافت مشاوره،  
-  مستقیماً با طوبی در تلگرام در ارتباط باش.  
-</p>  
+                <div class="eyebrow">
+                    WHY TOUBA
+                </div>
 
-<a  
-  href="https://t.me/Muhammad_sarbaz"  
-  class="order-btn"  
->  
-  ✈ ثبت سفارش در تلگرام  
-</a>
+                <h2 class="values-title">
+                    جزئیات
+                    <span>مهم‌اند.</span>
+                </h2>
 
-  </div>  </section>  <!-- ================= FOOTER ================= -->  <footer>    <div class="footer-logo">  
-    طوبی  
-  </div>    <div class="footer-en">  
-    TOUBA PERFUME  
-  </div>    <p>  
-    فروشگاه تخصصی عطر و رایحه  
-  </p>  <a
-href="https://t.me/Muhammad_sarbaz"
-class="footer-telegram"
+            </div>
 
-> 
+        </div>
 
-Telegram: @Muhammad_sarbaz
 
-  </a>    <p>  
-    © 2026 TOUBA  
-  </p>  </footer>  </body>  
+        <div class="values-grid">
+
+
+            <div class="value reveal">
+
+                <div class="value-number">
+                    01
+                </div>
+
+                <div class="value-icon">
+                    ◇
+                </div>
+
+                <h3 class="value-title">
+                    انتخاب دقیق
+                </h3>
+
+                <p class="value-text">
+                    رایحه‌ها با توجه به شخصیت، فصل و تجربه‌ای که
+                    قرار است منتقل کنند انتخاب می‌شوند.
+                </p>
+
+            </div>
+
+
+
+            <div class="value reveal">
+
+                <div class="value-number">
+                    02
+                </div>
+
+                <div class="value-icon">
+                    ○
+                </div>
+
+                <h3 class="value-title">
+                    کیفیت
+                </h3>
+
+                <p class="value-text">
+                    تمرکز طوبی روی ارائه محصولی با ساختار و کیفیت
+                    یکنواخت و قابل اتکاست.
+                </p>
+
+            </div>
+
+
+
+            <div class="value reveal">
+
+                <div class="value-number">
+                    03
+                </div>
+
+                <div class="value-icon">
+                    /
+                </div>
+
+                <h3 class="value-title">
+                    تجربه متفاوت
+                </h3>
+
+                <p class="value-text">
+                    از اولین نگاه تا دریافت سفارش، تلاش می‌کنیم
+                    تجربه‌ای ساده اما حرفه‌ای داشته باشید.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     GUIDE
+     ===================================================== -->
+
+<section class="section guide" id="guide">
+
+    <div class="container guide-grid">
+
+
+        <div class="reveal">
+
+            <div class="eyebrow">
+                HOW TO ORDER
+            </div>
+
+            <h2 class="guide-title">
+                خرید
+                <span>ساده.</span>
+            </h2>
+
+            <p class="guide-intro">
+
+                برای ثبت سفارش کافی است محصول موردنظر خود را
+                انتخاب کنید و از طریق تلگرام با ما در ارتباط باشید.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="steps">
+
+
+            <div class="step reveal">
+
+                <div class="step-num">
+                    01
+                </div>
+
+                <div>
+
+                    <h3 class="step-title">
+                        انتخاب رایحه
+                    </h3>
+
+                    <p class="step-text">
+                        محصول موردنظر خود را از مجموعه انتخاب کنید.
+                    </p>
+
+                </div>
+
+                <div class="step-arrow">
+                    ←
+                </div>
+
+            </div>
+
+
+
+            <div class="step reveal">
+
+                <div class="step-num">
+                    02
+                </div>
+
+                <div>
+
+                    <h3 class="step-title">
+                        ارتباط با طوبی
+                    </h3>
+
+                    <p class="step-text">
+                        برای ثبت سفارش در تلگرام پیام دهید.
+                    </p>
+
+                </div>
+
+                <div class="step-arrow">
+                    ←
+                </div>
+
+            </div>
+
+
+
+            <div class="step reveal">
+
+                <div class="step-num">
+                    03
+                </div>
+
+                <div>
+
+                    <h3 class="step-title">
+                        تأیید سفارش
+                    </h3>
+
+                    <p class="step-text">
+                        جزئیات سفارش و نحوه ارسال با شما هماهنگ می‌شود.
+                    </p>
+
+                </div>
+
+                <div class="step-arrow">
+                    ←
+                </div>
+
+            </div>
+
+
+
+            <div class="step reveal">
+
+                <div class="step-num">
+                    04
+                </div>
+
+                <div>
+
+                    <h3 class="step-title">
+                        ارسال
+                    </h3>
+
+                    <p class="step-text">
+                        سفارش پس از تأیید برای شما ارسال خواهد شد.
+                    </p>
+
+                </div>
+
+                <div class="step-arrow">
+                    ←
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+     ===================================================== -->
+
+<section class="cta">
+
+    <div class="container cta-inner">
+
+
+        <div class="reveal">
+
+            <div class="eyebrow" style="color:#68727b;">
+                YOUR NEXT SCENT
+            </div>
+
+
+            <h2 class="cta-title">
+
+                رایحه
+                <span>
+                    بعدی تو.
+                </span>
+
+            </h2>
+
+        </div>
+
+
+
+        <div class="reveal">
+
+            <p class="cta-copy">
+
+                برای مشاوره انتخاب رایحه یا ثبت سفارش،
+                مستقیماً با طوبی در ارتباط باشید.
+
+            </p>
+
+
+            <a
+                class="cta-button"
+                href="https://t.me/Muhammad_sarbaz"
+                target="_blank"
+            >
+                ثبت سفارش در تلگرام
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-top">
+
+
+            <div>
+
+                <div class="footer-logo">
+                    طوبی
+                </div>
+
+                <div class="footer-logo-en">
+                    TOUBA
+                </div>
+
+                <p class="footer-description">
+                    Selected fragrances.
+                    Carefully chosen for those
+                    who care about their signature.
+                </p>
+
+            </div>
+
+
+
+            <div>
+
+                <div class="footer-heading">
+                    NAVIGATION
+                </div>
+
+                <div class="footer-links">
+
+                    <a href="#home">
+                        خانه
+                    </a>
+
+                    <a href="#products">
+                        محصولات
+                    </a>
+
+                    <a href="#about">
+                        درباره طوبی
+                    </a>
+
+                    <a href="#guide">
+                        راهنمای خرید
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <div>
+
+                <div class="footer-heading">
+                    CONTACT
+                </div>
+
+                <div class="footer-links">
+
+                    <a
+                        href="https://t.me/Muhammad_sarbaz"
+                        target="_blank"
+                    >
+                        Telegram
+                    </a>
+
+                    <a
+                        href="https://instagram.com/touba_perefume"
+                        target="_blank"
+                    >
+                        Instagram
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © TOUBA
+            </span>
+
+            <span>
+                MADE WITH INTENTION
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
+<script>
+
+/* HEADER */
+
+const header = document.getElementById("header");
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 30){
+        header.classList.add("scrolled");
+    }else{
+        header.classList.remove("scrolled");
+    }
+
+});
+
+
+/* MOBILE MENU */
+
+function openMenu(){
+
+    document
+        .getElementById("mobileMenu")
+        .classList.add("active");
+
+}
+
+
+function closeMenu(){
+
+    document
+        .getElementById("mobileMenu")
+        .classList.remove("active");
+
+}
+
+
+/* REVEAL ON SCROLL */
+
+const reveals =
+    document.querySelectorAll(".reveal");
+
+
+const observer =
+    new IntersectionObserver(
+
+        (entries) => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    entry.target.classList.add("show");
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold:.12
+        }
+
+    );
+
+
+reveals.forEach(element => {
+
+    observer.observe(element);
+
+});
+
+
+/* CLOSE MOBILE MENU WITH ESC */
+
+document.addEventListener("keydown", (e) => {
+
+    if(e.key === "Escape"){
+        closeMenu();
+    }
+
+});
+
+</script>
+
+
+</body>
 </html>
