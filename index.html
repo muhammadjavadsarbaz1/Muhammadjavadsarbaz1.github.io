@@ -5,27 +5,33 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>طوبی | TOUBA | فروش عطر و رایحه</title>
+  <title>طوبی | TOUBA — عطرهای خاص و لوکس</title>
 
-  <meta name="description"
-    content="فروشگاه عطر طوبی | TOUBA؛ مجموعه‌ای از رایحه‌های گرم، شیرین، وانیلی و مردانه با امکان ثبت سفارش در تلگرام.">
+  <meta name="description" content="طوبی TOUBA؛ انتخابی برای کسانی که به رایحه، شخصیت و جزئیات اهمیت می‌دهند. مجموعه‌ای از رایحه‌های خاص با سفارش مستقیم.">
 
-  <meta name="keywords"
-    content="طوبی, TOUBA, عطر, خرید عطر, عطر مردانه, عطر زنانه, اسانس عطر, Stronger With You Intensely, Tom Ford Vanilla Sex">
-
-  <meta name="author" content="TOUBA">
+  <meta name="keywords" content="طوبی, TOUBA, عطر, ادکلن, عطر مردانه, عطر زنانه, عطر خاص, عطر لوکس">
 
   <meta name="robots" content="index, follow">
-
-  <link rel="canonical" href="https://Muhammadjavadsarbaz1.github.io/">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+
+    :root {
+      --navy: #071a35;
+      --navy-2: #0a2345;
+      --navy-3: #0d2c50;
+      --blue: #12385f;
+      --white: #f8fafc;
+      --soft: #c8d1dc;
+      --muted: #8795a8;
+      --line: rgba(255,255,255,0.10);
+      --line-strong: rgba(255,255,255,0.17);
+      --glass: rgba(255,255,255,0.045);
+    }
 
     * {
       margin: 0;
@@ -38,492 +44,917 @@
     }
 
     body {
+      background:
+        radial-gradient(circle at 85% 5%, rgba(27,75,120,0.18), transparent 30%),
+        radial-gradient(circle at 10% 35%, rgba(16,57,96,0.13), transparent 25%),
+        var(--navy);
+      color: var(--white);
       font-family: "Vazirmatn", sans-serif;
-      background: #f7f8fa;
-      color: #172033;
       line-height: 1.9;
+      overflow-x: hidden;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
-    /* HEADER */
+    button {
+      font-family: inherit;
+    }
+
+    ::selection {
+      background: rgba(255,255,255,0.15);
+      color: white;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
 
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: #071a33;
-      color: white;
-      box-shadow: 0 5px 25px rgba(0,0,0,.12);
+      background: rgba(7, 26, 53, 0.82);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
     }
 
-    .nav {
-      max-width: 1200px;
+    .header-inner {
+      max-width: 1250px;
       margin: auto;
-      padding: 14px 22px;
+      padding: 17px 25px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 25px;
     }
 
     .brand {
       display: flex;
-      flex-direction: column;
-      line-height: 1;
+      align-items: center;
+      gap: 13px;
+      white-space: nowrap;
     }
 
-    .brand-en {
+    .brand-persian {
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: -1px;
+    }
+
+    .brand-divider {
+      width: 1px;
+      height: 25px;
+      background: var(--line-strong);
+    }
+
+    .brand-english {
       font-family: "Cormorant Garamond", serif;
-      font-size: 32px;
-      font-weight: 700;
+      font-size: 23px;
       letter-spacing: 4px;
     }
 
-    .brand-fa {
-      font-size: 12px;
-      opacity: .75;
-      margin-top: 5px;
-      letter-spacing: 2px;
-    }
-
-    .menu {
+    nav {
       display: flex;
-      gap: 24px;
       align-items: center;
-      font-size: 14px;
+      gap: 27px;
     }
 
-    .menu a {
-      opacity: .9;
-      transition: .2s;
+    nav a {
+      color: var(--soft);
+      font-size: 13px;
+      transition: 0.3s ease;
+      position: relative;
     }
 
-    .menu a:hover {
-      opacity: 1;
-    }
-
-    .telegram-top {
+    nav a::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: -7px;
+      width: 0;
+      height: 1px;
       background: white;
-      color: #071a33;
-      padding: 8px 15px;
-      border-radius: 8px;
-      font-weight: 700;
+      transition: 0.3s ease;
     }
 
-    /* HERO */
+    nav a:hover {
+      color: white;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .nav-order {
+      padding: 8px 15px;
+      border: 1px solid var(--line-strong);
+      border-radius: 30px;
+    }
+
+    .nav-order::after {
+      display: none;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
-      min-height: 650px;
-      background:
-        linear-gradient(
-          135deg,
-          rgba(7,26,51,.97),
-          rgba(12,42,76,.91)
-        );
-      color: white;
-      display: flex;
+      min-height: 720px;
+      max-width: 1250px;
+      margin: auto;
+      padding: 110px 25px 100px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
       align-items: center;
-      text-align: center;
-      padding: 80px 20px;
+      gap: 70px;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 50%;
+      left: -160px;
+      top: 100px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 270px;
+      height: 270px;
+      border: 1px solid rgba(255,255,255,0.04);
+      border-radius: 50%;
+      left: -85px;
+      top: 175px;
     }
 
     .hero-content {
-      max-width: 900px;
-      margin: auto;
+      position: relative;
+      z-index: 2;
     }
 
-    .hero-small {
-      font-size: 14px;
-      letter-spacing: 4px;
-      opacity: .7;
-      margin-bottom: 18px;
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #b8c5d4;
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+    }
+
+    .eyebrow span {
+      width: 34px;
+      height: 1px;
+      background: rgba(255,255,255,0.45);
     }
 
     .hero h1 {
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(70px, 13vw, 145px);
-      letter-spacing: 10px;
-      line-height: .9;
-      margin-bottom: 30px;
-    }
-
-    .hero h2 {
-      font-size: clamp(22px, 4vw, 38px);
+      font-size: clamp(75px, 11vw, 145px);
+      line-height: 0.72;
+      letter-spacing: 9px;
       font-weight: 500;
-      margin-bottom: 18px;
+      margin-bottom: 35px;
     }
 
-    .hero p {
-      max-width: 650px;
-      margin: auto;
-      opacity: .78;
-      font-size: 15px;
+    .hero-title-fa {
+      font-size: clamp(21px, 3vw, 32px);
+      font-weight: 300;
+      color: #dce4ec;
+      margin-bottom: 20px;
+    }
+
+    .hero-text {
+      max-width: 570px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 2.2;
+      margin-bottom: 34px;
     }
 
     .hero-buttons {
       display: flex;
-      justify-content: center;
       gap: 12px;
-      margin-top: 35px;
       flex-wrap: wrap;
     }
 
     .btn {
-      display: inline-block;
-      padding: 12px 25px;
-      border-radius: 9px;
-      font-weight: 700;
-      transition: .2s;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 48px;
+      padding: 0 24px;
+      border-radius: 4px;
+      font-size: 13px;
+      transition: 0.3s ease;
     }
 
-    .btn-light {
+    .btn-primary {
+      background: #eef2f6;
+      color: #071a35;
+    }
+
+    .btn-primary:hover {
       background: white;
-      color: #071a33;
-    }
-
-    .btn-outline {
-      border: 1px solid rgba(255,255,255,.45);
-      color: white;
-    }
-
-    .btn:hover {
       transform: translateY(-2px);
     }
 
-    /* SECTIONS */
-
-    .section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 90px 22px;
+    .btn-outline {
+      border: 1px solid var(--line-strong);
+      color: #e7edf3;
     }
 
-    .section-title {
-      text-align: center;
+    .btn-outline:hover {
+      background: var(--glass);
+      transform: translateY(-2px);
+    }
+
+    .hero-mark {
+      position: relative;
+      min-height: 460px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-ring {
+      width: 390px;
+      height: 390px;
+      max-width: 85vw;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 50%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-ring::before {
+      content: "";
+      position: absolute;
+      width: 315px;
+      height: 315px;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 50%;
+    }
+
+    .hero-ring::after {
+      content: "TOUBA";
+      position: absolute;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 19px;
+      letter-spacing: 7px;
+      color: rgba(255,255,255,0.5);
+      transform: rotate(-90deg);
+      left: -28px;
+      top: 48%;
+    }
+
+    .hero-center {
+      width: 210px;
+      height: 270px;
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.015));
+      box-shadow: 0 35px 80px rgba(0,0,0,0.28);
+    }
+
+    .hero-center .small {
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: #8fa0b2;
+      margin-bottom: 18px;
+    }
+
+    .hero-center .large {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 53px;
+      letter-spacing: 7px;
+      line-height: 1;
+    }
+
+    .hero-center .line {
+      width: 55px;
+      height: 1px;
+      background: rgba(255,255,255,0.35);
+      margin: 22px 0;
+    }
+
+    .hero-center .fa {
+      font-size: 13px;
+      color: #aab7c5;
+    }
+
+    /* =========================
+       GENERAL
+    ========================= */
+
+    .section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 105px 25px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
       margin-bottom: 45px;
     }
 
-    .section-title h2 {
-      font-size: 32px;
-      margin-bottom: 8px;
-      color: #071a33;
+    .section-number {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 15px;
+      letter-spacing: 3px;
+      color: #71849b;
+      margin-bottom: 7px;
     }
 
-    .section-title p {
-      color: #6c7480;
-      font-size: 14px;
+    .section-title {
+      font-size: 31px;
+      font-weight: 400;
+      letter-spacing: -0.5px;
     }
 
-    /* FEATURES */
+    .section-description {
+      color: var(--muted);
+      font-size: 13px;
+      max-width: 410px;
+      line-height: 2;
+    }
+
+    .line-full {
+      height: 1px;
+      background: var(--line);
+      margin: 10px 0;
+    }
+
+    /* =========================
+       WHY TOUBA
+    ========================= */
 
     .features {
       display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
     .feature {
-      background: white;
-      border-radius: 16px;
-      padding: 30px 24px;
-      text-align: center;
-      box-shadow: 0 8px 30px rgba(0,0,0,.05);
+      padding: 38px 30px;
+      border-left: 1px solid var(--line);
+      transition: 0.3s ease;
     }
 
-    .feature-icon {
-      font-size: 32px;
-      margin-bottom: 15px;
+    .feature:first-child {
+      border-left: none;
+    }
+
+    .feature:hover {
+      background: rgba(255,255,255,0.025);
+    }
+
+    .feature-number {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 18px;
+      color: #7e91a7;
+      margin-bottom: 22px;
     }
 
     .feature h3 {
-      font-size: 18px;
-      margin-bottom: 8px;
-      color: #071a33;
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 12px;
     }
 
     .feature p {
-      color: #69717d;
-      font-size: 14px;
+      font-size: 12px;
+      line-height: 2.2;
+      color: var(--muted);
     }
 
-    /* ABOUT */
+    /* =========================
+       ABOUT
+    ========================= */
 
     .about-box {
-      background: white;
-      padding: 40px;
-      border-radius: 18px;
-      box-shadow: 0 8px 30px rgba(0,0,0,.05);
-      text-align: center;
+      border: 1px solid var(--line);
+      padding: 65px;
+      position: relative;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.035), transparent 60%);
+      overflow: hidden;
     }
 
-    .about-box p {
-      max-width: 800px;
-      margin: auto;
-      color: #5e6672;
+    .about-box::before {
+      content: "T";
+      position: absolute;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 300px;
+      color: rgba(255,255,255,0.018);
+      left: 20px;
+      top: -90px;
+      line-height: 1;
     }
 
-    /* PRODUCTS */
+    .about-content {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+    }
+
+    .about-content h2 {
+      font-size: 26px;
+      font-weight: 400;
+      margin-bottom: 25px;
+    }
+
+    .about-content p {
+      color: #9caaba;
+      font-size: 14px;
+      line-height: 2.5;
+    }
+
+    .about-signature {
+      margin-top: 30px;
+      font-family: "Cormorant Garamond", serif;
+      letter-spacing: 5px;
+      font-size: 19px;
+      color: #d9e0e7;
+    }
+
+    /* =========================
+       PRODUCTS
+    ========================= */
 
     .products {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
+      gap: 25px;
     }
 
-    .product-card {
-      background: white;
-      border-radius: 18px;
+    .product {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.025);
       overflow: hidden;
-      box-shadow: 0 10px 35px rgba(0,0,0,.07);
-      transition: .25s;
-      border: 1px solid #edf0f4;
+      transition: 0.4s ease;
     }
 
-    .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(0,0,0,.1);
+    .product:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255,255,255,0.18);
+      box-shadow: 0 25px 70px rgba(0,0,0,0.22);
     }
 
     .product-image {
-      height: 390px;
-      background: #f3f4f6;
+      height: 420px;
+      position: relative;
+      background:
+        radial-gradient(circle at center, rgba(24,68,108,0.35), transparent 65%),
+        #081c38;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+    }
+
+    .product-image::after {
+      content: "TOUBA";
+      position: absolute;
+      left: 18px;
+      bottom: 10px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 68px;
+      letter-spacing: 7px;
+      color: rgba(255,255,255,0.025);
+      pointer-events: none;
     }
 
     .product-image img {
       width: 100%;
       height: 100%;
       object-fit: contain;
+      padding: 25px;
+      position: relative;
+      z-index: 2;
+      transition: 0.5s ease;
     }
 
-    .product-info {
-      padding: 26px;
+    .product:hover .product-image img {
+      transform: scale(1.035);
+    }
+
+    .product-body {
+      padding: 30px;
     }
 
     .product-category {
-      color: #7c8490;
-      font-size: 12px;
-      margin-bottom: 5px;
+      color: #7f92a8;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 9px;
     }
 
-    .product-name {
-      color: #071a33;
-      font-size: 23px;
-      margin-bottom: 12px;
-      font-weight: 800;
-    }
-
-    .product-description {
-      color: #68717d;
-      font-size: 14px;
-      margin-bottom: 18px;
-    }
-
-    .details-btn {
-      border: none;
-      background: #eef1f5;
-      color: #071a33;
-      padding: 10px 15px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-family: inherit;
-      font-weight: 600;
-      width: 100%;
+    .product h3 {
+      font-size: 21px;
+      font-weight: 500;
       margin-bottom: 10px;
     }
 
-    .details {
+    .product-description {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 2.1;
+      margin-bottom: 22px;
+    }
+
+    .product-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 22px;
+    }
+
+    .meta-item {
+      padding: 13px 0;
+    }
+
+    .meta-item + .meta-item {
+      border-right: 1px solid var(--line);
+      padding-right: 17px;
+    }
+
+    .meta-label {
+      display: block;
+      color: #65768a;
+      font-size: 10px;
+      margin-bottom: 3px;
+    }
+
+    .meta-value {
+      font-size: 11px;
+      color: #b6c1cc;
+    }
+
+    details {
+      margin-bottom: 22px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 15px;
+    }
+
+    summary {
+      cursor: pointer;
+      color: #c3ccd6;
+      font-size: 12px;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
       display: none;
-      background: #f7f8fa;
-      padding: 15px;
-      border-radius: 10px;
-      color: #626b77;
-      font-size: 13px;
-      margin-bottom: 15px;
     }
 
-    .details.show {
-      display: block;
+    summary::before {
+      content: "+";
+      margin-left: 9px;
+      color: #74869a;
     }
 
-    .order-btn {
-      display: block;
-      text-align: center;
-      background: #071a33;
-      color: white;
-      padding: 13px;
-      border-radius: 9px;
-      font-weight: 700;
-      transition: .2s;
+    details[open] summary::before {
+      content: "−";
     }
 
-    .order-btn:hover {
-      background: #0d2c51;
-      transform: translateY(-1px);
+    .details-content {
+      color: #7f8e9f;
+      font-size: 11px;
+      line-height: 2.2;
+      padding-top: 14px;
     }
 
-    /* GUIDE */
+    .product-button {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      background: #eef2f6;
+      color: #071a35;
+      font-size: 12px;
+      transition: 0.3s ease;
+    }
 
-    .guide-box {
+    .product-button:hover {
       background: white;
-      padding: 35px;
-      border-radius: 18px;
-      box-shadow: 0 8px 30px rgba(0,0,0,.05);
     }
 
-    .guide-item {
-      padding: 18px 0;
-      border-bottom: 1px solid #edf0f3;
+    /* =========================
+       GUIDE
+    ========================= */
+
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
     }
 
-    .guide-item:last-child {
-      border-bottom: none;
+    .guide-card {
+      min-height: 210px;
+      padding: 30px;
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01));
+      position: relative;
     }
 
-    .guide-item strong {
-      color: #071a33;
-      display: block;
+    .guide-card-number {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 36px;
+      color: #63778e;
+      line-height: 1;
+      margin-bottom: 25px;
+    }
+
+    .guide-card h3 {
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .guide-card p {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 2.1;
+    }
+
+    /* =========================
+       RULES
+    ========================= */
+
+    .rules-box {
+      border-top: 1px solid var(--line);
+    }
+
+    .rule {
+      display: grid;
+      grid-template-columns: 75px 1fr;
+      gap: 25px;
+      padding: 25px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .rule-number {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 21px;
+      color: #73869c;
+    }
+
+    .rule-text h3 {
+      font-size: 14px;
+      font-weight: 500;
       margin-bottom: 5px;
     }
 
-    .guide-item p {
-      color: #68717d;
-      font-size: 14px;
+    .rule-text p {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 2;
     }
 
-    /* RULES */
-
-    .rules-box {
-      background: white;
-      padding: 35px;
-      border-radius: 18px;
-      box-shadow: 0 8px 30px rgba(0,0,0,.05);
-    }
-
-    .rules-box ul {
-      padding-right: 22px;
-    }
-
-    .rules-box li {
-      margin-bottom: 15px;
-      color: #626b77;
-      font-size: 14px;
-    }
-
-    .rules-box strong {
-      color: #071a33;
-    }
-
-    /* TELEGRAM CTA */
+    /* =========================
+       CTA
+    ========================= */
 
     .cta {
-      background: #071a33;
-      color: white;
-      margin: 40px 22px 90px;
-      border-radius: 20px;
-      padding: 60px 25px;
-      text-align: center;
+      max-width: 1150px;
+      margin: 0 auto 100px;
+      padding: 70px 55px;
+      border: 1px solid var(--line-strong);
+      background:
+        radial-gradient(circle at 80% 50%, rgba(30,78,120,0.27), transparent 45%),
+        #06172f;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: "TOUBA";
+      position: absolute;
+      left: -15px;
+      bottom: -60px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 180px;
+      letter-spacing: 10px;
+      color: rgba(255,255,255,0.025);
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+      max-width: 670px;
+    }
+
+    .cta small {
+      color: #7f93aa;
+      letter-spacing: 2px;
+      font-size: 10px;
     }
 
     .cta h2 {
       font-size: 30px;
-      margin-bottom: 12px;
+      font-weight: 400;
+      margin: 13px 0 10px;
     }
 
     .cta p {
-      opacity: .75;
-      font-size: 14px;
+      color: #8291a3;
+      font-size: 12px;
       margin-bottom: 25px;
     }
 
-    .telegram-btn {
-      display: inline-block;
-      background: white;
-      color: #071a33;
-      padding: 13px 25px;
-      border-radius: 9px;
-      font-weight: 800;
-    }
-
-    /* FOOTER */
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
-      background: #041225;
-      color: white;
-      text-align: center;
-      padding: 45px 20px;
+      border-top: 1px solid var(--line);
+      padding: 40px 25px;
     }
 
-    footer .footer-brand {
+    .footer-inner {
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-brand {
       font-family: "Cormorant Garamond", serif;
-      font-size: 35px;
+      font-size: 25px;
       letter-spacing: 5px;
-      margin-bottom: 10px;
     }
 
-    footer p {
-      color: #8792a1;
-      font-size: 13px;
+    .footer-text {
+      color: #64758a;
+      font-size: 10px;
     }
 
     .footer-telegram {
-      display: inline-block;
-      margin-top: 15px;
-      color: white;
-      opacity: .8;
+      color: #a8b5c3;
+      font-size: 11px;
     }
 
-    /* MOBILE */
+    /* =========================
+       MOBILE
+    ========================= */
 
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
 
-      .menu {
+      nav {
         display: none;
       }
 
-      .features {
+      .hero {
         grid-template-columns: 1fr;
+        min-height: auto;
+        padding-top: 75px;
+        text-align: center;
+      }
+
+      .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero-text {
+        max-width: 620px;
+      }
+
+      .hero-mark {
+        min-height: 400px;
+      }
+
+      .features,
+      .guide-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature {
+        border-left: none;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .feature:last-child {
+        border-bottom: none;
       }
 
       .products {
         grid-template-columns: 1fr;
       }
 
-      .product-image {
-        height: 330px;
+      .about-box {
+        padding: 40px 28px;
       }
 
-      .section {
-        padding: 65px 18px;
+      .section-head {
+        display: block;
       }
 
-      .about-box,
-      .guide-box,
-      .rules-box {
-        padding: 25px 20px;
-      }
-
-      .hero {
-        min-height: 580px;
-      }
-
-      .hero h1 {
-        font-size: 75px;
-        letter-spacing: 6px;
+      .section-description {
+        margin-top: 15px;
       }
 
       .cta {
-        margin-left: 18px;
-        margin-right: 18px;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 50px 30px;
       }
 
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 520px) {
+
+      .header-inner {
+        padding: 15px 17px;
+      }
+
+      .brand-persian {
+        font-size: 21px;
+      }
+
+      .brand-english {
+        font-size: 20px;
+      }
+
+      .hero {
+        padding: 65px 20px 75px;
+      }
+
+      .hero h1 {
+        font-size: 78px;
+        letter-spacing: 5px;
+      }
+
+      .hero-center {
+        width: 175px;
+        height: 230px;
+      }
+
+      .hero-ring {
+        width: 320px;
+        height: 320px;
+      }
+
+      .hero-ring::before {
+        width: 260px;
+        height: 260px;
+      }
+
+      .section {
+        padding: 80px 20px;
+      }
+
+      .product-image {
+        height: 350px;
+      }
+
+      .product-body {
+        padding: 24px;
+      }
+
+      .rule {
+        grid-template-columns: 45px 1fr;
+        gap: 12px;
+      }
+
+      .cta {
+        margin-bottom: 70px;
+      }
+
+      .cta h2 {
+        font-size: 25px;
+      }
     }
 
   </style>
@@ -531,503 +962,63 @@
 
 <body>
 
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER
+  ========================== -->
 
   <header>
-
-    <div class="nav">
+    <div class="header-inner">
 
       <a href="#" class="brand">
-        <span class="brand-en">TOUBA</span>
-        <span class="brand-fa">طوبی</span>
+        <span class="brand-persian">طوبی</span>
+        <span class="brand-divider"></span>
+        <span class="brand-english">TOUBA</span>
       </a>
 
-      <nav class="menu">
-
+      <nav>
         <a href="#about">درباره ما</a>
-
         <a href="#products">محصولات</a>
-
         <a href="#guide">راهنمای خرید</a>
-
         <a href="#rules">قوانین خرید</a>
-
-        <a
-          class="telegram-top"
-          href="https://t.me/Muhammad_sarbaz"
-          target="_blank">
-          ثبت سفارش
-        </a>
-
-      </nav>
-
-    </div>
-
-  </header>
-
-
-  <!-- HERO -->
-
-  <section class="hero">
-
-    <div class="hero-content">
-
-      <div class="hero-small">
-        PERFUME • FRAGRANCE • TOUBA
-      </div>
-
-      <h1>TOUBA</h1>
-
-      <h2>رایحه‌ای برای ماندن</h2>
-
-      <p>
-        طوبی؛ انتخابی برای کسانی که رایحه را فقط یک عطر نمی‌دانند،
-        بلکه آن را بخشی از شخصیت و حضور خود می‌دانند.
-      </p>
-
-      <div class="hero-buttons">
-
-        <a href="#products" class="btn btn-light">
-          مشاهده رایحه‌ها
-        </a>
 
         <a
           href="https://t.me/Muhammad_sarbaz"
           target="_blank"
-          class="btn btn-outline">
-          سفارش در تلگرام
+          class="nav-order"
+        >
+          ثبت سفارش
         </a>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- WHY TOUBA -->
-
-  <section class="section">
-
-    <div class="section-title">
-
-      <h2>چرا طوبی؟</h2>
-
-      <p>
-        تمرکز ما روی تجربه‌ای ساده، شفاف و حرفه‌ای است.
-      </p>
+      </nav>
 
     </div>
+  </header>
 
 
-    <div class="features">
+  <!-- =========================
+       HERO
+  ========================== -->
 
-      <div class="feature">
+  <main>
 
-        <div class="feature-icon">✦</div>
+    <section class="hero">
 
-        <h3>انتخاب رایحه</h3>
+      <div class="hero-content">
 
-        <p>
-          مجموعه‌ای از رایحه‌های متنوع برای سلیقه‌های مختلف.
-        </p>
-
-      </div>
-
-
-      <div class="feature">
-
-        <div class="feature-icon">◈</div>
-
-        <h3>توجه به کیفیت</h3>
-
-        <p>
-          تمرکز طوبی بر انتخاب مواد اولیه و ترکیب نهایی با دقت بالا است.
-        </p>
-
-      </div>
-
-
-      <div class="feature">
-
-        <div class="feature-icon">↗</div>
-
-        <h3>ثبت سفارش آسان</h3>
-
-        <p>
-          انتخاب محصول و ثبت سفارش مستقیم از طریق تلگرام.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ABOUT -->
-
-  <section class="section" id="about">
-
-    <div class="section-title">
-
-      <h2>درباره طوبی</h2>
-
-      <p>
-        TOUBA PERFUME
-      </p>
-
-    </div>
-
-    <div class="about-box">
-
-      <p>
-
-        طوبی با هدف ارائه رایحه‌هایی با شخصیت، ماندگار و متناسب با
-        سلیقه‌های مختلف شکل گرفته است.
-
-        ما تلاش می‌کنیم انتخاب عطر برای مشتری ساده و شفاف باشد؛
-        از معرفی رایحه تا ثبت سفارش و ارسال.
-
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- PRODUCTS -->
-
-  <section class="section" id="products">
-
-    <div class="section-title">
-
-      <h2>رایحه‌های طوبی</h2>
-
-      <p>
-        مجموعه فعلی محصولات
-      </p>
-
-    </div>
-
-
-    <div class="products">
-
-
-      <!-- PRODUCT 1 -->
-
-      <article class="product-card">
-
-        <div class="product-image">
-
-          <img
-            src="HAXjgXsPsCBvR0R-MfkNt_5zXAA-9McOSGydRjyriJghgwsMuQ.png"
-            alt="عطر Stronger With You Intensely">
-
+        <div class="eyebrow">
+          <span></span>
+          عطر، شخصیت، امضا
         </div>
 
+        <h1>TOUBA</h1>
 
-        <div class="product-info">
-
-          <div class="product-category">
-            رایحه گرم و شیرین • مردانه
-          </div>
-
-          <h3 class="product-name">
-            Stronger With You Intensely
-          </h3>
-
-          <p class="product-description">
-
-            رایحه‌ای گرم، شیرین و عمیق با حال‌وهوایی جذاب و
-            مناسب برای فصل‌های خنک و استفاده در شب.
-
-          </p>
-
-
-          <button
-            class="details-btn"
-            onclick="this.nextElementSibling.classList.toggle('show')">
-
-            مشاهده توضیحات
-
-          </button>
-
-
-          <div class="details">
-
-            پروفایل رایحه:
-
-            گرم، شیرین، وانیلی و عمیق.
-
-            انتخابی مناسب برای پاییز و زمستان،
-            شب‌ها و موقعیت‌هایی که رایحه‌ای پرحضور می‌خواهید.
-
-            <br><br>
-
-            طوبی در انتخاب مواد اولیه و ترکیب نهایی رایحه،
-            تمرکز ویژه‌ای روی کیفیت و ایجاد تجربه‌ای نزدیک
-            به شخصیت رایحه اصلی دارد.
-
-          </div>
-
-
-          <a
-            class="order-btn"
-            href="https://t.me/Muhammad_sarbaz?text=سلام، برای خرید Stronger%20With%20You%20Intensely پیام می‌دم."
-            target="_blank">
-
-            سفارش این رایحه در تلگرام
-
-          </a>
-
+        <div class="hero-title-fa">
+          انتخابی برای رایحه‌های ماندگار
         </div>
 
-      </article>
-
-
-
-      <!-- PRODUCT 2 -->
-
-      <article class="product-card">
-
-        <div class="product-image">
-
-          <img
-            src="HhPdfl-aeM5RuXdjsTPqk_PHkGo-NMh6uWQRQRGiipZLKo4PUw.png"
-            alt="عطر Tom Ford Vanilla Sex">
-
-        </div>
-
-
-        <div class="product-info">
-
-          <div class="product-category">
-            رایحه گرم و وانیلی • لوکس
-          </div>
-
-          <h3 class="product-name">
-            Tom Ford Vanilla Sex
-          </h3>
-
-          <p class="product-description">
-
-            رایحه‌ای گرم، وانیلی، شیرین و عمیق با فضایی
-            متفاوت و لوکس؛ مناسب برای فصل‌های خنک و شب.
-
-          </p>
-
-
-          <button
-            class="details-btn"
-            onclick="this.nextElementSibling.classList.toggle('show')">
-
-            مشاهده توضیحات
-
-          </button>
-
-
-          <div class="details">
-
-            پروفایل رایحه:
-
-            وانیلی، گرم، شیرین و کرمی با شخصیت عمیق.
-
-            مناسب پاییز و زمستان، استفاده شبانه و
-            موقعیت‌های خاص.
-
-            <br><br>
-
-            طوبی در انتخاب مواد اولیه و ترکیب نهایی رایحه،
-            تمرکز ویژه‌ای روی کیفیت و ایجاد تجربه‌ای نزدیک
-            به شخصیت رایحه اصلی دارد.
-
-          </div>
-
-
-          <a
-            class="order-btn"
-            href="https://t.me/Muhammad_sarbaz?text=سلام، برای خرید Tom%20Ford%20Vanilla%20Sex پیام می‌دم."
-            target="_blank">
-
-            سفارش این رایحه در تلگرام
-
-          </a>
-
-        </div>
-
-      </article>
-
-
-    </div>
-
-  </section>
-
-
-  <!-- GUIDE -->
-
-  <section class="section" id="guide">
-
-    <div class="section-title">
-
-      <h2>راهنمای خرید</h2>
-
-      <p>
-        مراحل ثبت سفارش از طوبی
-      </p>
-
-    </div>
-
-
-    <div class="guide-box">
-
-      <div class="guide-item">
-
-        <strong>۱. انتخاب رایحه</strong>
-
-        <p>
-          محصول مورد نظر خود را از میان رایحه‌های موجود انتخاب کنید.
+        <p class="hero-text">
+          طوبی برای کسانی ساخته شده که عطر را فقط یک رایحه نمی‌بینند؛
+          بلکه آن را بخشی از شخصیت، حضور و خاطره خود می‌دانند.
+          مجموعه‌ای منتخب از رایحه‌های خاص، با تمرکز بر کیفیت و تجربه‌ای متفاوت.
         </p>
 
-      </div>
-
-
-      <div class="guide-item">
-
-        <strong>۲. ثبت سفارش</strong>
-
-        <p>
-          روی گزینه سفارش محصول بزنید تا وارد گفت‌وگوی تلگرام طوبی شوید.
-        </p>
-
-      </div>
-
-
-      <div class="guide-item">
-
-        <strong>۳. هماهنگی نهایی</strong>
-
-        <p>
-          حجم، قیمت روز و اطلاعات ارسال در تلگرام با شما هماهنگ می‌شود.
-        </p>
-
-      </div>
-
-
-      <div class="guide-item">
-
-        <strong>۴. ارسال</strong>
-
-        <p>
-          پس از نهایی‌شدن سفارش، اطلاعات ارسال برای شما ثبت خواهد شد.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- RULES -->
-
-  <section class="section" id="rules">
-
-    <div class="section-title">
-
-      <h2>قوانین و مقررات خرید</h2>
-
-      <p>
-        شرایط خرید از فروشگاه طوبی
-      </p>
-
-    </div>
-
-
-    <div class="rules-box">
-
-      <ul>
-
-        <li>
-          <strong>
-            نام صاحب کارت پرداخت‌کننده باید با نام گیرنده بسته یکسان باشد.
-          </strong>
-        </li>
-
-        <li>
-          سفارش پس از هماهنگی نهایی و تأیید اطلاعات ثبت می‌شود.
-        </li>
-
-        <li>
-          قیمت محصولات ممکن است با توجه به قیمت روز مواد اولیه تغییر کند.
-        </li>
-
-        <li>
-          اطلاعات مربوط به حجم، قیمت و نحوه ارسال قبل از نهایی‌شدن سفارش اعلام می‌شود.
-        </li>
-
-        <li>
-          مشتری موظف است آدرس و اطلاعات تماس صحیح را هنگام ثبت سفارش ارائه کند.
-        </li>
-
-      </ul>
-
-    </div>
-
-  </section>
-
-
-  <!-- CTA -->
-
-  <section class="cta">
-
-    <h2>
-      آماده انتخاب رایحه‌ات هستی؟
-    </h2>
-
-    <p>
-      برای استعلام قیمت روز و ثبت سفارش با طوبی در تلگرام در ارتباط باش.
-    </p>
-
-    <a
-      href="https://t.me/Muhammad_sarbaz"
-      target="_blank"
-      class="telegram-btn">
-
-      ورود به تلگرام طوبی
-
-    </a>
-
-  </section>
-
-
-  <!-- FOOTER -->
-
-  <footer>
-
-    <div class="footer-brand">
-      TOUBA
-    </div>
-
-    <p>
-      طوبی | TOUBA PERFUME
-    </p>
-
-    <a
-      href="https://t.me/Muhammad_sarbaz"
-      target="_blank"
-      class="footer-telegram">
-
-      Telegram: @Muhammad_sarbaz
-
-    </a>
-
-    <p style="margin-top:20px;">
-      © 2026 TOUBA. All rights reserved.
-    </p>
-
-  </footer>
-
-
-</body>
-</html>
+       
