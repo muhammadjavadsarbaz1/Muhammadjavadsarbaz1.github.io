@@ -1,0 +1,1014 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>پنل مدیریت | TOUBA</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:#f5f6f8;
+  color:#101828;
+  font-family:Arial,Tahoma,sans-serif
+}
+header{
+  background:#071a35;
+  color:#fff;
+  padding:18px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center
+}
+header b{font-size:22px}
+button{font:inherit;cursor:pointer}
+.wrap{max-width:1100px;margin:auto;padding:22px}
+.card{
+  background:#fff;
+  border:1px solid #e6e9ee;
+  border-radius:16px;
+  padding:18px;
+  margin-bottom:18px;
+  box-shadow:0 6px 24px #071a3509
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px
+}
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:6px
+}
+.field label{
+  font-size:12px;
+  color:#667085
+}
+.field input,
+.field textarea,
+.field select{
+  padding:11px;
+  border:1px solid #d8dee8;
+  border-radius:10px;
+  font:inherit;
+  background:#fff
+}
+.btn{
+  border:0;
+  border-radius:10px;
+  padding:11px 15px;
+  background:#071a35;
+  color:#fff
+}
+.btn.alt{
+  background:#eef1f5;
+  color:#071a35
+}
+.btn.danger{background:#b42318}
+.row{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  flex-wrap:wrap
+}
+.hidden{display:none}
+.muted{
+  color:#667085;
+  font-size:12px
+}
+.table{
+  width:100%;
+  border-collapse:collapse
+}
+.table th,
+.table td{
+  padding:10px;
+  border-bottom:1px solid #edf0f4;
+  text-align:right;
+  font-size:12px;
+  vertical-align:top
+}
+.status{
+  padding:5px 8px;
+  border-radius:20px;
+  background:#eef1f5;
+  font-size:11px
+}
+.variant{
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+  padding:12px;
+  margin-top:10px
+}
+.msg{
+  margin:10px 0;
+  padding:10px;
+  border-radius:10px;
+  background:#eef6ff
+}
+.err{
+  background:#fff0f0;
+  color:#b42318
+}
+@media(max-width:700px){
+  .grid{grid-template-columns:1fr}
+  .wrap{padding:14px}
+  .table{font-size:11px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div>
+    <b>طوبی</b>
+    <span style="opacity:.65"> TOUBA ADMIN</span>
+  </div>
+
+  <button id="logout" class="btn alt hidden">خروج</button>
+</header>
+
+<div class="wrap">
+
+<!-- LOGIN -->
+
+<section id="auth" class="card">
+
+<h2>ورود مدیریت</h2>
+
+<div class="grid">
+
+<div class="field">
+<label>ایمیل</label>
+<input id="email" type="email" autocomplete="email">
+</div>
+
+<div class="field">
+<label>رمز عبور</label>
+<input id="password" type="password" autocomplete="current-password">
+</div>
+
+</div>
+
+<div class="row" style="margin-top:14px">
+
+<button id="login" class="btn">
+ورود
+</button>
+
+<button id="signup" class="btn alt">
+ساخت حساب مدیر
+</button>
+
+</div>
+
+<div id="authMsg" class="msg hidden"></div>
+
+<p class="muted">
+اولین حسابی که ساخته و وارد شود، مدیر اولیه فروشگاه می‌شود.
+</p>
+
+</section>
+
+
+<!-- PANEL -->
+
+<section id="panel" class="hidden">
+
+<div id="msg" class="msg hidden"></div>
+
+
+<!-- ADD PRODUCT -->
+
+<div class="card">
+
+<h2>افزودن محصول</h2>
+
+<div class="grid">
+
+<div class="field">
+<label>نام محصول</label>
+<input id="pname">
+</div>
+
+<div class="field">
+<label>برند</label>
+<input id="pbrand">
+</div>
+
+<div class="field">
+<label>لینک تصویر</label>
+<input id="pimage">
+</div>
+
+<div class="field">
+<label>توضیحات</label>
+<textarea id="pdesc"></textarea>
+</div>
+
+</div>
+
+<button id="addProduct" class="btn" style="margin-top:14px">
+افزودن محصول
+</button>
+
+</div>
+
+
+<!-- PRODUCTS -->
+
+<div class="card">
+
+<h2>محصولات و موجودی</h2>
+
+<div id="products"></div>
+
+</div>
+
+
+<!-- ORDERS -->
+
+<div class="card">
+
+<h2>سفارش‌ها</h2>
+
+<div id="orders"></div>
+
+</div>
+
+</section>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+const SUPABASE_URL =
+"https://lzhowunlkjhhjcyhgmfi.supabase.co";
+
+const SUPABASE_KEY =
+"sb_publishable_uZvqxj5jLyXAo1967Xm9iA_PbBo-ykA";
+
+const sb =
+supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+
+
+const $ = id =>
+document.getElementById(id);
+
+
+function message(text,error=false){
+
+  const el=$("msg");
+
+  el.textContent=text;
+
+  el.className="msg"+(error?" err":"");
+
+  el.classList.remove("hidden");
+
+}
+
+
+function authMessage(text,error=false){
+
+  const el=$("authMsg");
+
+  el.textContent=text;
+
+  el.className="msg"+(error?" err":"");
+
+  el.classList.remove("hidden");
+
+}
+
+
+/* ADMIN CHECK */
+
+async function isAdmin(){
+
+  const {data,error} =
+  await sb.rpc("bootstrap_first_admin");
+
+  if(error){
+    console.error(error);
+    return false;
+  }
+
+  return !!data;
+
+}
+
+
+/* ENTER PANEL */
+
+async function enter(){
+
+  const {
+    data:{session}
+  } = await sb.auth.getSession();
+
+  if(!session) return;
+
+  const ok =
+  await isAdmin();
+
+  if(!ok){
+
+    authMessage(
+      "این حساب دسترسی مدیر ندارد.",
+      true
+    );
+
+    return;
+  }
+
+  $("auth").classList.add("hidden");
+
+  $("panel").classList.remove("hidden");
+
+  $("logout").classList.remove("hidden");
+
+  loadAll();
+
+}
+
+
+/* LOGIN */
+
+$("login").onclick =
+async()=>{
+
+  authMessage("در حال ورود...");
+
+  const {error} =
+  await sb.auth.signInWithPassword({
+
+    email:$("email").value.trim(),
+
+    password:$("password").value
+
+  });
+
+  if(error){
+
+    authMessage(
+      error.message,
+      true
+    );
+
+    return;
+  }
+
+  enter();
+
+};
+
+
+/* SIGNUP */
+
+$("signup").onclick =
+async()=>{
+
+  const email =
+  $("email").value.trim();
+
+  const password =
+  $("password").value;
+
+  if(!email || !password){
+
+    authMessage(
+      "ایمیل و رمز عبور را وارد کن.",
+      true
+    );
+
+    return;
+  }
+
+  authMessage(
+    "در حال ساخت حساب..."
+  );
+
+  const {error} =
+  await sb.auth.signUp({
+
+    email,
+    password
+
+  });
+
+  if(error){
+
+    authMessage(
+      error.message,
+      true
+    );
+
+    return;
+  }
+
+  const {error:loginError} =
+  await sb.auth.signInWithPassword({
+
+    email,
+    password
+
+  });
+
+  if(loginError){
+
+    authMessage(
+      "حساب ساخته شد. اگر تأیید ایمیل فعال است، ایمیل را تأیید کن.",
+      false
+    );
+
+    return;
+  }
+
+  enter();
+
+};
+
+
+/* LOGOUT */
+
+$("logout").onclick =
+async()=>{
+
+  await sb.auth.signOut();
+
+  location.reload();
+
+};
+
+
+/* LOAD ALL */
+
+async function loadAll(){
+
+  await loadProducts();
+
+  await loadOrders();
+
+}
+
+
+/* LOAD PRODUCTS */
+
+async function loadProducts(){
+
+  const {data,error} =
+  await sb
+  .from("products")
+  .select(`
+    id,
+    name,
+    brand,
+    description,
+    image_url,
+    is_active,
+    product_variants(
+      id,
+      volume_ml,
+      price_toman,
+      stock_ml,
+      is_active
+    )
+  `)
+  .order("created_at");
+
+
+  if(error){
+
+    message(
+      error.message,
+      true
+    );
+
+    return;
+  }
+
+
+  const box =
+  $("products");
+
+
+  if(!data || !data.length){
+
+    box.innerHTML =
+    '<p class="muted">محصولی وجود ندارد.</p>';
+
+    return;
+
+  }
+
+
+  box.innerHTML =
+  data.map(product=>{
+
+    const variants =
+    (product.product_variants || [])
+    .sort(
+      (a,b)=>
+      a.volume_ml-b.volume_ml
+    );
+
+
+    return `
+
+    <div class="variant">
+
+      <div class="row">
+
+        <strong>
+          ${esc(product.name)}
+        </strong>
+
+        <span class="muted">
+          ${esc(product.brand || "")}
+        </span>
+
+      </div>
+
+
+      <div class="grid" style="margin-top:10px">
+
+        <div class="field">
+
+          <label>نام محصول</label>
+
+          <input
+            id="n-${product.id}"
+            value="${esc(product.name)}"
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label>تصویر</label>
+
+          <input
+            id="i-${product.id}"
+            value="${esc(product.image_url || "")}"
+          >
+
+        </div>
+
+      </div>
+
+
+      <div class="row" style="margin-top:10px">
+
+        <button
+          class="btn"
+          onclick="saveProduct('${product.id}')"
+        >
+          ذخیره محصول
+        </button>
+
+      </div>
+
+
+      <h4>
+        حجم / قیمت / موجودی
+      </h4>
+
+
+      ${
+        variants.map(v=>`
+
+          <div
+            class="grid"
+            style="margin-top:8px"
+          >
+
+            <div class="field">
+
+              <label>
+                ${v.volume_ml} ml — قیمت تومان
+              </label>
+
+              <input
+                id="price-${v.id}"
+                type="number"
+                value="${v.price_toman || 0}"
+              >
+
+            </div>
+
+
+            <div class="field">
+
+              <label>
+                موجودی بر حسب ml
+              </label>
+
+              <input
+                id="stock-${v.id}"
+                type="number"
+                value="${v.stock_ml || 0}"
+              >
+
+            </div>
+
+
+            <div class="row">
+
+              <button
+                class="btn"
+                onclick="saveVariant('${v.id}')"
+              >
+                ذخیره ${v.volume_ml} ml
+              </button>
+
+            </div>
+
+          </div>
+
+        `).join("")
+      }
+
+    </div>
+
+    `;
+
+  }).join("");
+
+}
+
+
+/* ESCAPE */
+
+function esc(value){
+
+  return String(value)
+
+    .replaceAll("&","&amp;")
+
+    .replaceAll('"',"&quot;")
+
+    .replaceAll("<","&lt;")
+
+    .replaceAll(">","&gt;");
+
+}
+
+
+/* SAVE PRODUCT */
+
+window.saveProduct =
+async id=>{
+
+  const {error} =
+  await sb
+  .from("products")
+  .update({
+
+    name:
+    $("n-"+id).value.trim(),
+
+    image_url:
+    $("i-"+id).value.trim(),
+
+    updated_at:
+    new Date().toISOString()
+
+  })
+  .eq("id",id);
+
+
+  if(error){
+
+    message(
+      error.message,
+      true
+    );
+
+  }else{
+
+    message(
+      "محصول ذخیره شد."
+    );
+
+    loadProducts();
+
+  }
+
+};
+
+
+/* SAVE VARIANT */
+
+window.saveVariant =
+async id=>{
+
+  const price =
+  Number(
+    $("price-"+id).value
+  );
+
+  const stock =
+  Number(
+    $("stock-"+id).value
+  );
+
+
+  if(price < 0 || stock < 0){
+
+    message(
+      "قیمت و موجودی نمی‌تواند منفی باشد.",
+      true
+    );
+
+    return;
+  }
+
+
+  const {error} =
+  await sb
+  .from("product_variants")
+  .update({
+
+    price_toman:price,
+
+    stock_ml:stock,
+
+    updated_at:
+    new Date().toISOString()
+
+  })
+  .eq("id",id);
+
+
+  if(error){
+
+    message(
+      error.message,
+      true
+    );
+
+  }else{
+
+    message(
+      "قیمت و موجودی ذخیره شد."
+    );
+
+  }
+
+};
+
+
+/* ADD PRODUCT */
+
+$("addProduct").onclick =
+async()=>{
+
+  const name =
+  $("pname").value.trim();
+
+  if(!name){
+
+    message(
+      "نام محصول را وارد کن.",
+      true
+    );
+
+    return;
+  }
+
+
+  const {data,error} =
+  await sb
+  .from("products")
+  .insert({
+
+    name,
+
+    brand:
+    $("pbrand").value.trim(),
+
+    description:
+    $("pdesc").value.trim(),
+
+    image_url:
+    $("pimage").value.trim()
+
+  })
+  .select("id")
+  .single();
+
+
+  if(error){
+
+    message(
+      error.message,
+      true
+    );
+
+    return;
+  }
+
+
+  for(
+    const ml of [10,20,30,50]
+  ){
+
+    const {error:variantError} =
+    await sb
+    .from("product_variants")
+    .insert({
+
+      product_id:data.id,
+
+      volume_ml:ml,
+
+      price_toman:0,
+
+      stock_ml:0
+
+    });
+
+
+    if(variantError){
+
+      message(
+        variantError.message,
+        true
+      );
+
+      return;
+    }
+
+  }
+
+
+  $("pname").value="";
+  $("pbrand").value="";
+  $("pdesc").value="";
+  $("pimage").value="";
+
+
+  message(
+    "محصول با حجم‌های ۱۰، ۲۰، ۳۰ و ۵۰ ml ساخته شد."
+  );
+
+
+  loadProducts();
+
+};
+
+
+/* ORDERS */
+
+async function loadOrders(){
+
+  const {data,error} =
+  await sb
+  .from("orders")
+  .select(`
+    id,
+    customer_name,
+    phone,
+    address,
+    status,
+    total_toman,
+    notes,
+    created_at,
+    order_items(
+      product_name,
+      volume_ml,
+      quantity,
+      unit_price_toman
+    )
+  `)
+  .order(
+    "created_at",
+    {ascending:false}
+  );
+
+
+  if(error){
+
+    $("orders").innerHTML =
+    '<p class="muted">'+
+    esc(error.message)+
+    '</p>';
+
+    return;
+
+  }
+
+
+  if(!data || !data.length){
+
+    $("orders").innerHTML =
+    '<p class="muted">هنوز سفارشی ثبت نشده.</p>';
+
+    return;
+
+  }
+
+
+  $("orders").innerHTML =
+  data.map(order=>`
+
+    <div class="variant">
+
+      <div class="row">
+
+        <strong>
+          ${esc(order.customer_name)}
+        </strong>
+
+        <span class="status">
+          ${esc(order.status)}
+        </span>
+
+        <span class="muted">
+          ${new Date(
+            order.created_at
+          ).toLocaleString("fa-IR")}
+        </span>
+
+      </div>
+
+
+      <p class="muted">
+
+        تلفن:
+        ${esc(order.phone || "-")}
+
+        <br>
+
+        آدرس:
+        ${esc(order.address || "-")}
+
+      </p>
+
+
+      <ul>
+
+        ${
+          (order.order_items || [])
+          .map(item=>`
+
+            <li>
+
+              ${esc(item.product_name)}
+
+              —
+
+              ${item.volume_ml}ml
+
+              ×
+
+              ${item.quantity}
+
+            </li>
+
+          `)
+          .join("")
+        }
+
+      </ul>
+
+
+      <strong>
+
+        مبلغ:
+
+        ${Number(
+          order.total_toman || 0
+        ).toLocaleString("fa-IR")}
+
+        تومان
+
+      </strong>
+
+    </div>
+
+  `)
+  .join("");
+
+}
+
+
+/* START */
+
+enter();
+
+</script>
+
+</body>
+</html>
