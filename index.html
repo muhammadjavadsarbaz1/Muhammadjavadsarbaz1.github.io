@@ -1301,6 +1301,664 @@ encodeURIComponent(message),
 
 renderCart();
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const SUPABASE_URL = "https://lzhowunlkjhhjcyhgmfi.supabase.co";
+const SUPABASE_KEY = "sb_publishable_uZvqxj5jLyXAo1967Xm9iA_PbBo-ykA";
+
+const DB = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+
+const CART_KEY = "touba_cart_v2";
+
+let cart = JSON.parse(
+  localStorage.getItem(CART_KEY) || "[]"
+);
+
+const fa = n =>
+  String(n).replace(
+    /\d/g,
+    d => "۰۱۲۳۴۵۶۷۸۹"[d]
+  );
+
+
+function save() {
+  localStorage.setItem(
+    CART_KEY,
+    JSON.stringify(cart)
+  );
+
+  renderCart();
+}
+
+
+function toggleDetails(btn) {
+  btn.nextElementSibling.classList.toggle("show");
+}
+
+
+function openCart() {
+  renderCart();
+
+  document
+    .getElementById("cartModal")
+    .classList.add("show");
+}
+
+
+function closeCart() {
+  document
+    .getElementById("cartModal")
+    .classList.remove("show");
+}
+
+
+function removeItem(i) {
+  cart.splice(i, 1);
+  save();
+}
+
+
+function renderCart() {
+
+  document.getElementById("cartCount")
+    .textContent = fa(
+      cart.reduce(
+        (s, x) => s + x.qty,
+        0
+      )
+    );
+
+  const box =
+    document.getElementById("cartItems");
+
+  if (!cart.length) {
+
+    box.innerHTML =
+      '<p style="color:#7b8491;text-align:center;padding:25px">سبد خرید خالی است.</p>';
+
+    return;
+  }
+
+  box.innerHTML =
+    cart.map((x, i) => `
+
+      <div class="cart-item">
+
+        <div>
+
+          <strong>
+            ${x.name}
+          </strong>
+
+          <br>
+
+          <small>
+            ${fa(x.ml)} ml × ${fa(x.qty)}
+          </small>
+
+          ${
+            x.price
+              ? `<br><small>${fa(x.price * x.qty)} تومان</small>`
+              : ""
+          }
+
+        </div>
+
+        <button
+          class="remove"
+          onclick="removeItem(${i})">
+
+          حذف
+
+        </button>
+
+      </div>
+
+    `).join("");
+}
+
+
+async function loadProductsFromDB() {
+
+  const productsBox =
+    document.querySelector(".products");
+
+  if (!productsBox) return;
+
+  productsBox.innerHTML = `
+    <div style="
+      grid-column:1/-1;
+      text-align:center;
+      padding:40px;
+      color:#7b8491;
+    ">
+      در حال دریافت رایحه‌ها...
+    </div>
+  `;
+
+
+  const { data, error } = await DB
+    .from("products")
+    .select(`
+      id,
+      name,
+      brand,
+      description,
+      image_url,
+      is_active,
+      product_variants(
+        id,
+        volume_ml,
+        price_toman,
+        stock_ml,
+        is_active
+      )
+    `)
+    .eq("is_active", true)
+    .order("created_at");
+
+
+  if (error) {
+
+    console.error(error);
+
+    productsBox.innerHTML = `
+      <div style="
+        grid-column:1/-1;
+        text-align:center;
+        padding:40px;
+        color:#b42318;
+      ">
+        خطا در دریافت محصولات.
+      </div>
+    `;
+
+    return;
+  }
+
+
+  if (!data || !data.length) {
+
+    productsBox.innerHTML = `
+      <div style="
+        grid-column:1/-1;
+        text-align:center;
+        padding:40px;
+        color:#7b8491;
+      ">
+        فعلاً محصولی موجود نیست.
+      </div>
+    `;
+
+    return;
+  }
+
+
+  productsBox.innerHTML =
+    data.map(product => {
+
+      const variants =
+        (product.product_variants || [])
+          .filter(v => v.is_active)
+          .sort(
+            (a,b) =>
+              a.volume_ml - b.volume_ml
+          );
+
+
+      const first =
+        variants[0];
+
+
+      const sizes =
+        variants.length
+          ? variants.map((v,i) => `
+
+              <button
+                class="size ${i === 0 ? "active" : ""}"
+                data-ml="${v.volume_ml}"
+                data-variant="${v.id}"
+                data-price="${v.price_toman || 0}"
+                data-stock="${v.stock_ml || 0}">
+
+                ${fa(v.volume_ml)} ml
+
+              </button>
+
+            `).join("")
+          : `
+            <div style="
+              color:#7b8491;
+              font-size:12px;
+              padding:10px 0;
+            ">
+              فعلاً موجود نیست
+            </div>
+          `;
+
+
+      return `
+
+        <div class="product-card">
+
+          <div class="product-image">
+
+            <img
+              src="${product.image_url || ""}"
+              alt="${product.name}">
+
+          </div>
+
+
+          <div class="product-content">
+
+            <h3>
+              ${product.name}
+            </h3>
+
+            <div class="product-name">
+              ${product.brand || ""}
+            </div>
+
+
+            <button
+              class="details-btn"
+              onclick="toggleDetails(this)">
+
+              مشاهده توضیحات
+
+            </button>
+
+
+            <div class="product-details">
+
+              <p>
+                ${product.description || "رایحه‌ای خاص از مجموعه طوبی."}
+              </p>
+
+            </div>
+
+
+            <div class="size-title">
+              انتخاب حجم
+            </div>
+
+
+            <div
+              class="sizes"
+              data-product="${product.id}">
+
+              ${sizes}
+
+            </div>
+
+
+            <div
+              class="live-price"
+              style="
+                margin-top:10px;
+                color:#071a35;
+                font-size:12px;
+                font-weight:700;
+              ">
+
+              ${
+                first && first.price_toman
+                  ? `${fa(first.price_toman)} تومان`
+                  : "استعلام قیمت"
+              }
+
+            </div>
+
+
+            <div
+              class="live-stock"
+              style="
+                margin-top:5px;
+                color:#7b8491;
+                font-size:11px;
+              ">
+
+              ${
+                first
+                  ? `موجودی: ${fa(Math.floor((first.stock_ml || 0) / first.volume_ml))} عدد`
+                  : ""
+              }
+
+            </div>
+
+
+            <div class="buy-row">
+
+              <button
+                class="add-btn"
+                ${
+                  !first || !first.stock_ml
+                    ? "disabled"
+                    : ""
+                }
+                onclick="addDBProduct(this)">
+
+                افزودن به سبد
+
+              </button>
+
+
+              <a
+                class="product-btn"
+                href="https://t.me/Muhammad_sarbaz">
+
+                استعلام قیمت
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      `;
+
+    }).join("");
+
+
+  document
+    .querySelectorAll(".sizes")
+    .forEach(group => {
+
+      const priceBox =
+        group
+          .closest(".product-content")
+          .querySelector(".live-price");
+
+      const stockBox =
+        group
+          .closest(".product-content")
+          .querySelector(".live-stock");
+
+      const addButton =
+        group
+          .closest(".product-content")
+          .querySelector(".add-btn");
+
+
+      group
+        .querySelectorAll(".size")
+        .forEach(btn => {
+
+          btn.onclick = () => {
+
+            group
+              .querySelectorAll(".size")
+              .forEach(x =>
+                x.classList.remove("active")
+              );
+
+            btn.classList.add("active");
+
+
+            const price =
+              Number(
+                btn.dataset.price || 0
+              );
+
+            const stock =
+              Number(
+                btn.dataset.stock || 0
+              );
+
+            const ml =
+              Number(
+                btn.dataset.ml
+              );
+
+
+            priceBox.textContent =
+              price
+                ? `${fa(price)} تومان`
+                : "استعلام قیمت";
+
+
+            stockBox.textContent =
+              `موجودی: ${fa(
+                Math.floor(stock / ml)
+              )} عدد`;
+
+
+            addButton.disabled =
+              stock < ml;
+
+          };
+
+        });
+
+    });
+
+}
+
+
+function addDBProduct(btn) {
+
+  const card =
+    btn.closest(".product-card");
+
+  const size =
+    card.querySelector(
+      ".size.active"
+    );
+
+
+  if (!size) {
+    alert("حجم محصول را انتخاب کنید.");
+    return;
+  }
+
+
+  const stock =
+    Number(
+      size.dataset.stock || 0
+    );
+
+  const ml =
+    Number(
+      size.dataset.ml
+    );
+
+
+  if (stock < ml) {
+
+    alert("این حجم فعلاً موجود نیست.");
+    return;
+
+  }
+
+
+  const variantId =
+    size.dataset.variant;
+
+  const price =
+    Number(
+      size.dataset.price || 0
+    );
+
+
+  const name =
+    card.querySelector("h3")
+      .textContent
+      .trim();
+
+
+  const found =
+    cart.find(
+      x =>
+        x.variantId === variantId
+    );
+
+
+  if (found) {
+
+    if (
+      (found.qty + 1) * ml >
+      stock
+    ) {
+
+      alert("موجودی کافی نیست.");
+      return;
+
+    }
+
+    found.qty++;
+
+  } else {
+
+    cart.push({
+
+      variantId,
+      name,
+      ml,
+      price,
+      qty: 1
+
+    });
+
+  }
+
+
+  save();
+  openCart();
+
+}
+
+
+async function sendTelegramOrder() {
+
+  if (!cart.length) {
+
+    alert("سبد خرید خالی است.");
+    return;
+
+  }
+
+
+  const customerName =
+    prompt("نام و نام خانوادگی:");
+
+  if (!customerName) return;
+
+
+  const phone =
+    prompt("شماره تماس:");
+
+  if (!phone) return;
+
+
+  const address =
+    prompt("آدرس کامل:");
+
+  if (!address) return;
+
+
+  const items =
+    cart.map(x => ({
+
+      variant_id:
+        x.variantId,
+
+      quantity:
+        x.qty
+
+    }));
+
+
+  const { data: orderId, error } =
+    await DB.rpc(
+      "create_store_order",
+      {
+        p_customer_name:
+          customerName,
+
+        p_phone:
+          phone,
+
+        p_address:
+          address,
+
+        p_notes:
+          "",
+
+        p_items:
+          items
+      }
+    );
+
+
+  if (error) {
+
+    console.error(error);
+
+    alert(
+      "ثبت سفارش انجام نشد:\n" +
+      error.message
+    );
+
+    return;
+
+  }
+
+
+  const lines =
+    cart.map(x =>
+      `• ${x.name} — ${fa(x.ml)} ml × ${fa(x.qty)}`
+    ).join("\n");
+
+
+  const message =
+`سلام، برای ثبت این سفارش پیام می‌دهم:
+
+${lines}
+
+نام: ${customerName}
+شماره تماس: ${phone}
+آدرس: ${address}
+
+کد سفارش:
+${orderId}`;
+
+
+  cart = [];
+
+  save();
+
+
+  closeCart();
+
+
+  window.open(
+    "https://t.me/Muhammad_sarbaz?text=" +
+    encodeURIComponent(message),
+    "_blank"
+  );
+
+
+  await loadProductsFromDB();
+
+
+  alert(
+    "سفارش با موفقیت ثبت شد و موجودی کم شد."
+  );
+
+}
+
+
+renderCart();
+
+loadProductsFromDB();
+
 </script>
 
 </body>
