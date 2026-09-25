@@ -10,8 +10,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0
+}
+
+html{
+scroll-behavior:smooth
+}
 
 body{
 font-family:Vazirmatn,sans-serif;
@@ -413,6 +421,74 @@ border-radius:30px;
 font-weight:600;
 }
 
+.my-orders-box{
+background:#fff;
+border-radius:22px;
+padding:28px 22px;
+box-shadow:0 8px 30px #071a350d;
+max-width:650px;
+margin:auto;
+}
+
+.orders-input{
+width:100%;
+padding:13px 14px;
+border:1px solid #dbe2ea;
+border-radius:12px;
+font-family:inherit;
+font-size:13px;
+margin-bottom:10px;
+outline:none;
+}
+
+.orders-input:focus{
+border-color:#071a35;
+}
+
+.orders-button{
+width:100%;
+padding:13px;
+border:0;
+border-radius:12px;
+background:#071a35;
+color:#fff;
+font-family:inherit;
+cursor:pointer;
+font-size:13px;
+}
+
+.order-status{
+padding:16px;
+border-radius:14px;
+margin-top:10px;
+text-align:right;
+background:#f7f8fa;
+border:1px solid #e7ebf0;
+}
+
+.order-status.pending{
+border-right:4px solid #d99b00;
+}
+
+.order-status.approved{
+border-right:4px solid #16803c;
+}
+
+.order-status.rejected{
+border-right:4px solid #b42318;
+}
+
+.order-status strong{
+color:#071a35;
+}
+
+.order-status small{
+display:block;
+color:#7b8491;
+margin-top:7px;
+font-size:11px;
+}
+
 .cart{
 position:fixed;
 left:18px;
@@ -575,12 +651,14 @@ grid-template-columns:repeat(4,1fr);
 }
 
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
+
 <div class="nav">
 
 <div>
@@ -589,16 +667,27 @@ grid-template-columns:repeat(4,1fr);
 </div>
 
 <div class="menu">
+
 <a href="#about">درباره ما</a>
+
 <a href="#products">محصولات</a>
+
+<a href="#my-orders">سفارشات من</a>
+
 <a href="#guide">راهنما</a>
+
 <a href="#rules">قوانین</a>
-<a href="https://t.me/Muhammad_sarbaz" class="telegram">
+
+<a
+href="https://t.me/Muhammad_sarbaz"
+class="telegram">
 ثبت سفارش
 </a>
+
 </div>
 
 </div>
+
 </header>
 
 
@@ -619,11 +708,14 @@ TOUBA PERFUME
 
 <div class="hero-buttons">
 
-<a href="#products" class="hero-btn">
+<a
+href="#products"
+class="hero-btn">
 مشاهده رایحه‌ها
 </a>
 
-<a href="https://t.me/Muhammad_sarbaz"
+<a
+href="https://t.me/Muhammad_sarbaz"
 class="hero-btn-outline">
 مشاوره و سفارش
 </a>
@@ -636,37 +728,71 @@ class="hero-btn-outline">
 <section class="section">
 
 <div class="section-title">
-<h2>چرا طوبی؟</h2>
-<p>انتخاب با دقت، ارائه با وسواس</p>
+
+<h2>
+چرا طوبی؟
+</h2>
+
+<p>
+انتخاب با دقت، ارائه با وسواس
+</p>
+
 </div>
 
 <div class="features">
 
 <div class="feature">
-<div class="feature-icon">✦</div>
-<h3>انتخاب خاص</h3>
+
+<div class="feature-icon">
+✦
+</div>
+
+<h3>
+انتخاب خاص
+</h3>
+
 <p>
 رایحه‌هایی با شخصیت متفاوت برای سلیقه‌های خاص و متمایز.
 </p>
+
 </div>
 
+
 <div class="feature">
-<div class="feature-icon">◈</div>
-<h3>کیفیت</h3>
+
+<div class="feature-icon">
+◈
+</div>
+
+<h3>
+کیفیت
+</h3>
+
 <p>
 تمرکز طوبی بر کیفیت مواد اولیه و تجربه نهایی رایحه است.
 </p>
+
 </div>
 
+
 <div class="feature">
-<div class="feature-icon">♢</div>
-<h3>مشاوره رایحه</h3>
+
+<div class="feature-icon">
+♢
+</div>
+
+<h3>
+مشاوره رایحه
+</h3>
+
 <p>
 برای انتخاب عطر مناسب، قبل از خرید راهنمایی‌تان می‌کنیم.
 </p>
+
 </div>
 
 </div>
+
 </section>
 
 
@@ -692,222 +818,150 @@ ABOUT TOUBA
 <section class="section" id="products">
 
 <div class="section-title">
-<h2>رایحه‌های طوبی</h2>
-<p>حجم موردنظر را انتخاب و به سبد اضافه کنید.</p>
+
+<h2>
+رایحه‌های طوبی
+</h2>
+
+<p>
+حجم موردنظر را انتخاب و به سبد اضافه کنید.
+</p>
+
 </div>
 
 <div class="products">
 
-<div class="product-card">
+<div style="
+grid-column:1/-1;
+text-align:center;
+padding:40px;
+color:#7b8491;
+">
 
-<div class="product-image">
-
-<img
-src="HAXjgXsPsCBvR0R-MfkNt_5zXAA-9McOSGydRjyriJghgwsMuQ.png"
-alt="Stronger With You Intensely">
+در حال دریافت رایحه‌ها...
 
 </div>
 
-<div class="product-content">
-
-<h3>
-Stronger With You Intensely
-</h3>
-
-<div class="product-name">
-استرانگر ویت یو اینتنسلی
 </div>
 
-<button
-class="details-btn"
-onclick="toggleDetails(this)">
-مشاهده توضیحات
-</button>
+</section>
 
-<div class="product-details">
 
-<p>
-رایحه‌ای گرم، شیرین و عمیق با حال‌وهوایی جذاب و مردانه؛
-مناسب پاییز، زمستان و موقعیت‌های شبانه.
-</p>
+<section class="section" id="my-orders">
+
+<div class="section-title">
+
+<h2>
+سفارشات من
+</h2>
 
 <p>
-<strong>کیفیت طوبی:</strong>
-تمرکز بر انتخاب مواد اولیه و ترکیب نهایی رایحه برای تجربه‌ای باکیفیت.
+وضعیت سفارش خود را پیگیری کنید.
 </p>
 
 </div>
 
-<div class="size-title">
-انتخاب حجم
-</div>
 
-<div class="sizes">
+<div class="my-orders-box">
 
-<button class="size active" data-ml="10">
-۱۰ ml
-</button>
+<input
+id="ordersName"
+class="orders-input"
+type="text"
+placeholder="نام و نام خانوادگی">
 
-<button class="size" data-ml="20">
-۲۰ ml
-</button>
 
-<button class="size" data-ml="30">
-۳۰ ml
-</button>
+<input
+id="ordersPhone"
+class="orders-input"
+type="tel"
+placeholder="شماره تماس">
 
-<button class="size" data-ml="50">
-۵۰ ml
-</button>
-
-</div>
-
-<div class="buy-row">
 
 <button
-class="add-btn"
-onclick="addToCart(
-'stronger',
-'Stronger With You Intensely',
-this
-)">
-افزودن به سبد
+class="orders-button"
+onclick="loadMyOrders()">
+
+مشاهده سفارشات من
+
 </button>
 
-<a
-class="product-btn"
-href="https://t.me/Muhammad_sarbaz">
-استعلام قیمت
-</a>
+
+<div
+id="myOrdersResult"
+style="margin-top:18px">
 
 </div>
 
 </div>
-</div>
 
-
-<div class="product-card">
-
-<div class="product-image">
-
-<img
-src="HhPdfl-aeM5RuXdjsTPqk_PHkGo-NMh6uWQRQRGiipZLKo4PUw.png"
-alt="Tom Ford Vanilla Sex">
-
-</div>
-
-<div class="product-content">
-
-<h3>
-Tom Ford Vanilla Sex
-</h3>
-
-<div class="product-name">
-تام فورد وانیلا سکس
-</div>
-
-<button
-class="details-btn"
-onclick="toggleDetails(this)">
-مشاهده توضیحات
-</button>
-
-<div class="product-details">
-
-<p>
-رایحه‌ای گرم، وانیلی، شیرین و عمیق با شخصیت لوکس و متفاوت؛
-مناسب پاییز و زمستان.
-</p>
-
-<p>
-<strong>کیفیت طوبی:</strong>
-تمرکز بر انتخاب مواد اولیه و ترکیب نهایی رایحه و ارائه تجربه‌ای باکیفیت.
-</p>
-
-</div>
-
-<div class="size-title">
-انتخاب حجم
-</div>
-
-<div class="sizes">
-
-<button class="size active" data-ml="10">
-۱۰ ml
-</button>
-
-<button class="size" data-ml="20">
-۲۰ ml
-</button>
-
-<button class="size" data-ml="30">
-۳۰ ml
-</button>
-
-<button class="size" data-ml="50">
-۵۰ ml
-</button>
-
-</div>
-
-<div class="buy-row">
-
-<button
-class="add-btn"
-onclick="addToCart(
-'vanilla',
-'Tom Ford Vanilla Sex',
-this
-)">
-افزودن به سبد
-</button>
-
-<a
-class="product-btn"
-href="https://t.me/Muhammad_sarbaz">
-استعلام قیمت
-</a>
-
-</div>
-
-</div>
-</div>
-
-</div>
 </section>
 
 
 <section class="section" id="guide">
 
 <div class="section-title">
-<h2>راهنمای خرید</h2>
-<p>خرید از طوبی ساده و مستقیم است.</p>
+
+<h2>
+راهنمای خرید
+</h2>
+
+<p>
+خرید از طوبی ساده و مستقیم است.
+</p>
+
 </div>
 
 <div class="guide">
 
 <div class="guide-box">
-<div class="guide-number">01</div>
-<h3>انتخاب رایحه</h3>
+
+<div class="guide-number">
+01
+</div>
+
+<h3>
+انتخاب رایحه
+</h3>
+
 <p>
 رایحه و حجم موردنظر را انتخاب کنید.
 </p>
+
 </div>
 
+
 <div class="guide-box">
-<div class="guide-number">02</div>
-<h3>افزودن به سبد</h3>
+
+<div class="guide-number">
+02
+</div>
+
+<h3>
+افزودن به سبد
+</h3>
+
 <p>
 محصولات را داخل سبد قرار دهید و سفارش را بررسی کنید.
 </p>
+
 </div>
 
+
 <div class="guide-box">
-<div class="guide-number">03</div>
-<h3>هماهنگی و ارسال</h3>
+
+<div class="guide-number">
+03
+</div>
+
+<h3>
+هماهنگی و ارسال
+</h3>
+
 <p>
 جزئیات پرداخت و ارسال با شما هماهنگ خواهد شد.
 </p>
+
 </div>
 
 </div>
@@ -918,49 +972,90 @@ href="https://t.me/Muhammad_sarbaz">
 <section class="section" id="rules">
 
 <div class="section-title">
-<h2>قوانین و مقررات خرید</h2>
-<p>شرایط خرید از فروشگاه طوبی</p>
+
+<h2>
+قوانین و مقررات خرید
+</h2>
+
+<p>
+شرایط خرید از فروشگاه طوبی
+</p>
+
 </div>
+
 
 <div class="rules-box">
 
+
 <div class="rule-item">
-<h3>۱. ثبت سفارش</h3>
+
+<h3>
+۱. ثبت سفارش
+</h3>
+
 <p>
 ثبت سفارش از طریق راه‌های ارتباطی اعلام‌شده توسط طوبی انجام می‌شود.
 </p>
+
 </div>
 
+
 <div class="rule-item">
-<h3>۲. پرداخت وجه</h3>
+
+<h3>
+۲. پرداخت وجه
+</h3>
+
 <p>
 پرداخت به حساب اعلام‌شده از سوی طوبی انجام می‌شود.
+
 <strong>
 نام صاحب کارت پرداخت‌کننده باید با نام گیرنده بسته یکسان باشد.
 </strong>
+
 </p>
+
 </div>
 
+
 <div class="rule-item">
-<h3>۳. قیمت محصولات</h3>
+
+<h3>
+۳. قیمت محصولات
+</h3>
+
 <p>
 قیمت محصولات در زمان ثبت سفارش معتبر است.
 </p>
+
 </div>
 
+
 <div class="rule-item">
-<h3>۴. کیفیت</h3>
+
+<h3>
+۴. کیفیت
+</h3>
+
 <p>
 پخش و ماندگاری می‌تواند با توجه به نوع پوست، آب‌وهوا و نحوه استفاده متفاوت باشد.
 </p>
+
 </div>
 
+
 <div class="rule-item">
-<h3>۵. تغییر یا لغو</h3>
+
+<h3>
+۵. تغییر یا لغو
+</h3>
+
 <p>
 درخواست تغییر یا لغو باید پیش از آماده‌سازی و ارسال اعلام شود.
 </p>
+
 </div>
+
 
 </div>
 
@@ -982,7 +1077,9 @@ href="https://t.me/Muhammad_sarbaz">
 <a
 href="https://t.me/Muhammad_sarbaz"
 class="order-btn">
+
 ✈ ثبت سفارش در تلگرام
+
 </a>
 
 </div>
@@ -1030,12 +1127,16 @@ onclick="closeCart()">
 
 </div>
 
+
 <div id="cartItems"></div>
+
 
 <button
 class="checkout"
 onclick="sendTelegramOrder()">
-ارسال سفارش در تلگرام
+
+ثبت نهایی سفارش
+
 </button>
 
 </div>
@@ -1068,8 +1169,8 @@ Telegram: @Muhammad_sarbaz
 </footer>
 
 
-<!-- فقط یک بار Supabase -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 
 <script>
 
@@ -1088,6 +1189,7 @@ SUPABASE_KEY
 
 const CART_KEY =
 "touba_cart_v2";
+
 
 let cart =
 JSON.parse(
@@ -1122,36 +1224,7 @@ btn.nextElementSibling
 }
 
 
-function setupStaticSizes(){
-
-document
-.querySelectorAll(".sizes")
-.forEach(group => {
-
-group
-.querySelectorAll(".size")
-.forEach(btn => {
-
-btn.onclick = () => {
-
-group
-.querySelectorAll(".size")
-.forEach(x =>
-x.classList.remove("active")
-);
-
-btn.classList.add("active");
-
-};
-
-});
-
-});
-
-}
-
-
-function addToCart(id,name,btn){
+function addDBProduct(btn){
 
 const card =
 btn.closest(".product-card");
@@ -1167,29 +1240,67 @@ return;
 
 }
 
+const stock =
+Number(size.dataset.stock || 0);
+
 const ml =
-Number(size.dataset.ml);
+Number(size.dataset.ml || 0);
+
+if(stock < ml){
+
+alert("این حجم فعلاً موجود نیست.");
+
+return;
+
+}
+
+const variantId =
+size.dataset.variant;
+
+const price =
+Number(size.dataset.price || 0);
+
+const name =
+card
+.querySelector("h3")
+.textContent
+.trim();
 
 
 const found =
 cart.find(
-x =>
-x.id === id &&
-x.ml === ml
+x => x.variantId === variantId
 );
 
 
 if(found){
+
+if(
+(found.qty + 1) * ml > stock
+){
+
+alert("موجودی کافی نیست.");
+
+return;
+
+}
 
 found.qty++;
 
 }else{
 
 cart.push({
-id:id,
+
+variantId:variantId,
+
 name:name,
+
 ml:ml,
+
+price:price,
+
 qty:1
+
 });
 
 }
@@ -1263,13 +1374,11 @@ ${x.name}
 ${fa(x.ml)} ml × ${fa(x.qty)}
 </small>
 
-${
-x.price
-?
-`<br><small>${fa(x.price * x.qty)} تومان</small>`
-:
-""
-}
+<br>
+
+<small>
+${fa(x.price * x.qty)} تومان
+</small>
 
 </div>
 
@@ -1416,13 +1525,10 @@ data.map(product => {
 
 const variants =
 (product.product_variants || [])
-.filter(
-v => v.is_active
-)
+.filter(v => v.is_active)
 .sort(
 (a,b) =>
-a.volume_ml -
-b.volume_ml
+a.volume_ml - b.volume_ml
 );
 
 
@@ -1663,15 +1769,11 @@ btn.onclick = () => {
 group
 .querySelectorAll(".size")
 .forEach(x =>
-x.classList.remove(
-"active"
-)
+x.classList.remove("active")
 );
 
 
-btn.classList.add(
-"active"
-);
+btn.classList.add("active");
 
 
 const price =
@@ -1720,127 +1822,6 @@ stock < ml;
 });
 
 });
-
-}
-
-
-function addDBProduct(btn){
-
-const card =
-btn.closest(
-".product-card"
-);
-
-
-const size =
-card.querySelector(
-".size.active"
-);
-
-
-if(!size){
-
-alert(
-"حجم محصول را انتخاب کنید."
-);
-
-return;
-
-}
-
-
-const stock =
-Number(
-size.dataset.stock || 0
-);
-
-
-const ml =
-Number(
-size.dataset.ml || 0
-);
-
-
-if(stock < ml){
-
-alert(
-"این حجم فعلاً موجود نیست."
-);
-
-return;
-
-}
-
-
-const variantId =
-size.dataset.variant;
-
-
-const price =
-Number(
-size.dataset.price || 0
-);
-
-
-const name =
-card
-.querySelector("h3")
-.textContent
-.trim();
-
-
-const found =
-cart.find(
-x =>
-x.variantId ===
-variantId
-);
-
-
-if(found){
-
-if(
-(found.qty + 1) * ml >
-stock
-){
-
-alert(
-"موجودی کافی نیست."
-);
-
-return;
-
-}
-
-found.qty++;
-
-}else{
-
-cart.push({
-
-variantId:
-variantId,
-
-name:
-name,
-
-ml:
-ml,
-
-price:
-price,
-
-qty:
-1
-
-});
-
-}
-
-
-save();
-
-openCart();
 
 }
 
@@ -1943,8 +1924,7 @@ return;
 
 
 const lines =
-cart.map(
-x =>
+cart.map(x =>
 `• ${x.name} — ${fa(x.ml)} ml × ${fa(x.qty)}`
 )
 .join("\n");
@@ -1981,15 +1961,151 @@ await loadProductsFromDB();
 
 
 alert(
-"سفارش با موفقیت ثبت شد و موجودی کم شد."
+"سفارش شما با موفقیت ثبت شد.\n\nمشاورین ما به‌زودی با شما تماس خواهند گرفت."
 );
 
 }
 
 
-renderCart();
+async function loadMyOrders(){
 
-setupStaticSizes();
+const name =
+document
+.getElementById("ordersName")
+.value
+.trim();
+
+
+const phone =
+document
+.getElementById("ordersPhone")
+.value
+.trim();
+
+
+const resultBox =
+document.getElementById(
+"myOrdersResult"
+);
+
+
+if(!name || !phone){
+
+resultBox.innerHTML =
+'<p style="color:#b42318;text-align:center">نام و شماره تماس را وارد کنید.</p>';
+
+return;
+
+}
+
+
+resultBox.innerHTML =
+'<p style="color:#7b8491;text-align:center">در حال بررسی سفارشات...</p>';
+
+
+const result =
+await DB.rpc(
+"get_my_orders",
+{
+
+p_customer_name:
+name,
+
+p_phone:
+phone
+
+}
+);
+
+
+const data =
+result.data;
+
+const error =
+result.error;
+
+
+if(error){
+
+console.error(
+"My orders error:",
+error
+);
+
+resultBox.innerHTML =
+'<p style="color:#b42318;text-align:center">خطا در دریافت سفارشات.</p>';
+
+return;
+
+}
+
+
+if(!data || !data.length){
+
+resultBox.innerHTML =
+'<p style="color:#7b8491;text-align:center">سفارشی با این مشخصات پیدا نشد.</p>';
+
+return;
+
+}
+
+
+const statusText = {
+
+pending:
+"🟡 در انتظار تأیید",
+
+approved:
+"🟢 تأیید شده",
+
+rejected:
+"🔴 رد شده"
+
+};
+
+
+resultBox.innerHTML =
+data.map(order => {
+
+const date =
+new Date(
+order.created_at
+)
+.toLocaleDateString(
+"fa-IR"
+);
+
+
+return `
+
+<div class="order-status ${order.status}">
+
+<strong>
+${statusText[order.status] || order.status}
+</strong>
+
+<small>
+کد سفارش: ${order.id}
+</small>
+
+<small>
+مبلغ: ${fa(order.total_toman)} تومان
+</small>
+
+<small>
+تاریخ ثبت: ${date}
+</small>
+
+</div>
+
+`;
+
+}).join("");
+
+}
+
+
+renderCart();
 
 loadProductsFromDB();
 
