@@ -586,6 +586,87 @@ font-family:inherit;
 cursor:pointer;
 }
 
+.checkout-form{
+display:none;
+margin-top:18px;
+padding:22px;
+border:1px solid #e7ebf0;
+border-radius:20px;
+background:linear-gradient(180deg,#fff,#f8fafc);
+box-shadow:0 12px 35px #071a3512;
+}
+
+.checkout-form.show{
+display:block;
+}
+
+.checkout-brand{
+text-align:center;
+color:#071a35;
+font-size:25px;
+font-weight:700;
+margin-bottom:5px;
+}
+
+.checkout-sub{
+text-align:center;
+color:#7b8491;
+font-size:11px;
+margin-bottom:18px;
+}
+
+.checkout-field{
+margin-bottom:11px;
+}
+
+.checkout-field label{
+display:block;
+color:#071a35;
+font-size:12px;
+font-weight:600;
+margin-bottom:6px;
+}
+
+.checkout-field input{
+width:100%;
+padding:12px 13px;
+border:1px solid #dbe2ea;
+border-radius:11px;
+font-family:inherit;
+font-size:13px;
+outline:none;
+background:#fff;
+}
+
+.checkout-field input:focus{
+border-color:#071a35;
+box-shadow:0 0 0 3px #071a3510;
+}
+
+.checkout-submit{
+width:100%;
+border:0;
+background:#071a35;
+color:#fff;
+padding:13px;
+border-radius:12px;
+font-family:inherit;
+cursor:pointer;
+margin-top:5px;
+}
+
+.checkout-back{
+width:100%;
+border:0;
+background:#eef1f5;
+color:#071a35;
+padding:11px;
+border-radius:12px;
+font-family:inherit;
+cursor:pointer;
+margin-top:8px;
+}
+
 footer{
 background:#06162d;
 color:#fff;
@@ -678,9 +759,7 @@ grid-template-columns:repeat(4,1fr);
 
 <a href="#rules">قوانین</a>
 
-<a
-href="https://t.me/Muhammad_sarbaz"
-class="telegram">
+<a href="https://t.me/Muhammad_sarbaz" class="telegram">
 ثبت سفارش
 </a>
 
@@ -689,7 +768,6 @@ class="telegram">
 </div>
 
 </header>
-
 
 <section class="hero">
 
@@ -708,22 +786,17 @@ TOUBA PERFUME
 
 <div class="hero-buttons">
 
-<a
-href="#products"
-class="hero-btn">
+<a href="#products" class="hero-btn">
 مشاهده رایحه‌ها
 </a>
 
-<a
-href="https://t.me/Muhammad_sarbaz"
-class="hero-btn-outline">
+<a href="https://t.me/Muhammad_sarbaz" class="hero-btn-outline">
 مشاوره و سفارش
 </a>
 
 </div>
 
 </section>
-
 
 <section class="section">
 
@@ -757,7 +830,6 @@ class="hero-btn-outline">
 
 </div>
 
-
 <div class="feature">
 
 <div class="feature-icon">
@@ -773,7 +845,6 @@ class="hero-btn-outline">
 </p>
 
 </div>
-
 
 <div class="feature">
 
@@ -795,7 +866,6 @@ class="hero-btn-outline">
 
 </section>
 
-
 <section class="section" id="about">
 
 <div class="about">
@@ -813,7 +883,6 @@ ABOUT TOUBA
 </div>
 
 </section>
-
 
 <section class="section" id="products">
 
@@ -846,7 +915,6 @@ color:#7b8491;
 
 </section>
 
-
 <section class="section" id="my-orders">
 
 <div class="section-title">
@@ -861,7 +929,6 @@ color:#7b8491;
 
 </div>
 
-
 <div class="my-orders-box">
 
 <input
@@ -870,13 +937,11 @@ class="orders-input"
 type="text"
 placeholder="نام و نام خانوادگی">
 
-
 <input
 id="ordersPhone"
 class="orders-input"
 type="tel"
 placeholder="شماره تماس">
-
 
 <button
 class="orders-button"
@@ -885,7 +950,6 @@ onclick="loadMyOrders()">
 مشاهده سفارشات من
 
 </button>
-
 
 <div
 id="myOrdersResult"
@@ -896,7 +960,6 @@ style="margin-top:18px">
 </div>
 
 </section>
-
 
 <section class="section" id="guide">
 
@@ -930,7 +993,6 @@ style="margin-top:18px">
 
 </div>
 
-
 <div class="guide-box">
 
 <div class="guide-number">
@@ -946,7 +1008,6 @@ style="margin-top:18px">
 </p>
 
 </div>
-
 
 <div class="guide-box">
 
@@ -968,7 +1029,6 @@ style="margin-top:18px">
 
 </section>
 
-
 <section class="section" id="rules">
 
 <div class="section-title">
@@ -983,9 +1043,7 @@ style="margin-top:18px">
 
 </div>
 
-
 <div class="rules-box">
-
 
 <div class="rule-item">
 
@@ -998,7 +1056,6 @@ style="margin-top:18px">
 </p>
 
 </div>
-
 
 <div class="rule-item">
 
@@ -1017,7 +1074,6 @@ style="margin-top:18px">
 
 </div>
 
-
 <div class="rule-item">
 
 <h3>
@@ -1029,7 +1085,6 @@ style="margin-top:18px">
 </p>
 
 </div>
-
 
 <div class="rule-item">
 
@@ -1043,7 +1098,6 @@ style="margin-top:18px">
 
 </div>
 
-
 <div class="rule-item">
 
 <h3>
@@ -1056,11 +1110,9 @@ style="margin-top:18px">
 
 </div>
 
-
 </div>
 
 </section>
-
 
 <section class="section">
 
@@ -1086,7 +1138,6 @@ class="order-btn">
 
 </section>
 
-
 <div class="cart">
 
 <button
@@ -1104,7 +1155,6 @@ id="cartCount">
 </button>
 
 </div>
-
 
 <div
 class="modal"
@@ -1127,15 +1177,124 @@ onclick="closeCart()">
 
 </div>
 
-
 <div id="cartItems"></div>
-
 
 <button
 class="checkout"
-onclick="sendTelegramOrder()">
+onclick="startCheckout()">
+
+ادامه و تکمیل اطلاعات
+
+</button>
+
+<div id="checkoutForm" class="checkout-form">
+
+<div class="checkout-brand">
+طوبی
+</div>
+
+<div class="checkout-sub">
+برای ثبت سفارش، اطلاعات را به ترتیب وارد کنید.
+</div>
+
+<div class="checkout-field">
+
+<label for="checkoutName">
+۱. نام و نام خانوادگی
+</label>
+
+<input
+id="checkoutName"
+type="text"
+autocomplete="name"
+placeholder="نام و نام خانوادگی">
+
+</div>
+
+<div class="checkout-field">
+
+<label for="checkoutPhone">
+۲. شماره تماس
+</label>
+
+<input
+id="checkoutPhone"
+type="tel"
+autocomplete="tel"
+placeholder="مثلاً ۰۹۱۲۱۲۳۴۵۶۷">
+
+</div>
+
+<div class="checkout-field">
+
+<label for="checkoutAddress">
+۳. آدرس دقیق
+</label>
+
+<input
+id="checkoutAddress"
+type="text"
+autocomplete="street-address"
+placeholder="استان، شهر، خیابان، کوچه، پلاک، واحد">
+
+</div>
+
+<div class="checkout-field">
+
+<label for="checkoutPostal">
+۴. کد پستی
+</label>
+
+<input
+id="checkoutPostal"
+type="text"
+inputmode="numeric"
+autocomplete="postal-code"
+placeholder="کد پستی ۱۰ رقمی">
+
+</div>
+
+<div class="checkout-field">
+
+<label for="checkoutCardholder">
+۵. نام صاحب کارت
+</label>
+
+<input
+id="checkoutCardholder"
+type="text"
+autocomplete="name"
+placeholder="نام و نام خانوادگی صاحب کارت">
+
+</div>
+
+<div class="checkout-field">
+
+<label for="checkoutRecipient">
+۶. نام گیرنده
+</label>
+
+<input
+id="checkoutRecipient"
+type="text"
+autocomplete="name"
+placeholder="نام و نام خانوادگی گیرنده">
+
+</div>
+
+<button
+class="checkout-submit"
+onclick="submitOrder()">
 
 ثبت نهایی سفارش
+
+</button>
+
+<button
+class="checkout-back"
+onclick="backToCart()">
+
+بازگشت به سبد خرید
 
 </button>
 
@@ -1143,6 +1302,7 @@ onclick="sendTelegramOrder()">
 
 </div>
 
+</div>
 
 <footer>
 
@@ -1168,9 +1328,7 @@ Telegram: @Muhammad_sarbaz
 
 </footer>
 
-
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
 
 <script>
 
@@ -1186,23 +1344,19 @@ SUPABASE_URL,
 SUPABASE_KEY
 );
 
-
 const CART_KEY =
 "touba_cart_v2";
-
 
 let cart =
 JSON.parse(
 localStorage.getItem(CART_KEY) || "[]"
 );
 
-
 const fa = n =>
 String(n).replace(
 /\d/g,
 d => "۰۱۲۳۴۵۶۷۸۹"[d]
 );
-
 
 function save(){
 
@@ -1215,14 +1369,12 @@ renderCart();
 
 }
 
-
 function toggleDetails(btn){
 
 btn.nextElementSibling
 .classList.toggle("show");
 
 }
-
 
 function addDBProduct(btn){
 
@@ -1266,12 +1418,10 @@ card
 .textContent
 .trim();
 
-
 const found =
 cart.find(
 x => x.variantId === variantId
 );
-
 
 if(found){
 
@@ -1305,13 +1455,11 @@ qty:1
 
 }
 
-
 save();
 
 openCart();
 
 }
-
 
 function removeItem(i){
 
@@ -1320,7 +1468,6 @@ cart.splice(i,1);
 save();
 
 }
-
 
 function renderCart(){
 
@@ -1336,7 +1483,6 @@ document.getElementById(
 
 if(!count || !box)return;
 
-
 count.textContent =
 fa(
 cart.reduce(
@@ -1344,7 +1490,6 @@ cart.reduce(
 0
 )
 );
-
 
 if(!cart.length){
 
@@ -1354,7 +1499,6 @@ box.innerHTML =
 return;
 
 }
-
 
 box.innerHTML =
 cart.map(
@@ -1397,7 +1541,6 @@ onclick="removeItem(${i})">
 
 }
 
-
 function openCart(){
 
 renderCart();
@@ -1408,7 +1551,6 @@ document
 
 }
 
-
 function closeCart(){
 
 document
@@ -1417,14 +1559,12 @@ document
 
 }
 
-
 async function loadProductsFromDB(){
 
 const productsBox =
 document.querySelector(".products");
 
 if(!productsBox)return;
-
 
 productsBox.innerHTML = `
 
@@ -1440,7 +1580,6 @@ color:#7b8491;
 </div>
 
 `;
-
 
 const result =
 await DB
@@ -1463,13 +1602,11 @@ is_active
 .eq("is_active",true)
 .order("created_at");
 
-
 const data =
 result.data;
 
 const error =
 result.error;
-
 
 if(error){
 
@@ -1497,7 +1634,6 @@ return;
 
 }
 
-
 if(!data || !data.length){
 
 productsBox.innerHTML = `
@@ -1519,7 +1655,6 @@ return;
 
 }
 
-
 productsBox.innerHTML =
 data.map(product => {
 
@@ -1531,10 +1666,8 @@ const variants =
 a.volume_ml - b.volume_ml
 );
 
-
 const first =
 variants[0];
-
 
 const sizes =
 variants.length
@@ -1574,7 +1707,6 @@ padding:10px 0;
 
 `;
 
-
 return `
 
 <div class="product-card">
@@ -1587,7 +1719,6 @@ alt="${product.name}">
 
 </div>
 
-
 <div class="product-content">
 
 <h3>
@@ -1598,7 +1729,6 @@ ${product.name}
 ${product.brand || ""}
 </div>
 
-
 <button
 class="details-btn"
 onclick="toggleDetails(this)">
@@ -1606,7 +1736,6 @@ onclick="toggleDetails(this)">
 مشاهده توضیحات
 
 </button>
-
 
 <div class="product-details">
 
@@ -1616,11 +1745,9 @@ ${product.description || "رایحه‌ای خاص از مجموعه طوبی."}
 
 </div>
 
-
 <div class="size-title">
 انتخاب حجم
 </div>
-
 
 <div
 class="sizes"
@@ -1629,7 +1756,6 @@ data-product="${product.id}">
 ${sizes}
 
 </div>
-
 
 <div
 class="live-price"
@@ -1654,7 +1780,6 @@ first.price_toman
 }
 
 </div>
-
 
 <div
 class="live-stock"
@@ -1683,7 +1808,6 @@ first.volume_ml
 
 </div>
 
-
 <div class="buy-row">
 
 <button
@@ -1701,7 +1825,6 @@ onclick="addDBProduct(this)">
 افزودن به سبد
 
 </button>
-
 
 <a
 class="product-btn"
@@ -1721,11 +1844,9 @@ href="https://t.me/Muhammad_sarbaz">
 
 }).join("");
 
-
 setupDBSizeButtons();
 
 }
-
 
 function setupDBSizeButtons(){
 
@@ -1733,38 +1854,31 @@ document
 .querySelectorAll(".sizes")
 .forEach(group => {
 
-
 const content =
 group.closest(
 ".product-content"
 );
-
 
 const priceBox =
 content.querySelector(
 ".live-price"
 );
 
-
 const stockBox =
 content.querySelector(
 ".live-stock"
 );
-
 
 const addButton =
 content.querySelector(
 ".add-btn"
 );
 
-
 group
 .querySelectorAll(".size")
 .forEach(btn => {
 
-
 btn.onclick = () => {
-
 
 group
 .querySelectorAll(".size")
@@ -1772,27 +1886,22 @@ group
 x.classList.remove("active")
 );
 
-
 btn.classList.add("active");
-
 
 const price =
 Number(
 btn.dataset.price || 0
 );
 
-
 const stock =
 Number(
 btn.dataset.stock || 0
 );
 
-
 const ml =
 Number(
 btn.dataset.ml || 0
 );
-
 
 priceBox.textContent =
 price
@@ -1805,14 +1914,12 @@ price
 
 "استعلام قیمت";
 
-
 stockBox.textContent =
 `موجودی: ${fa(
 Math.floor(
 stock / ml
 )
 )} عدد`;
-
 
 addButton.disabled =
 stock < ml;
@@ -1825,43 +1932,143 @@ stock < ml;
 
 }
 
-
-async function sendTelegramOrder(){
+function startCheckout(){
 
 if(!cart.length){
 
+alert("سبد خرید خالی است.");
+
+return;
+
+}
+
+document
+.getElementById("checkoutForm")
+.classList
+.add("show");
+
+document.querySelector(".checkout")
+.style.display="none";
+
+setTimeout(()=>{
+
+document
+.getElementById("checkoutName")
+.focus();
+
+},50);
+
+}
+
+function backToCart(){
+
+document
+.getElementById("checkoutForm")
+.classList
+.remove("show");
+
+document.querySelector(".checkout")
+.style.display="block";
+
+}
+
+async function submitOrder(){
+
+const customerName =
+document
+.getElementById("checkoutName")
+.value
+.trim();
+
+const phone =
+document
+.getElementById("checkoutPhone")
+.value
+.trim();
+
+const address =
+document
+.getElementById("checkoutAddress")
+.value
+.trim();
+
+const postalCode =
+document
+.getElementById("checkoutPostal")
+.value
+.trim();
+
+const cardholderName =
+document
+.getElementById("checkoutCardholder")
+.value
+.trim();
+
+const recipientName =
+document
+.getElementById("checkoutRecipient")
+.value
+.trim();
+
+if(!customerName){
+
 alert(
-"سبد خرید خالی است."
+"نام و نام خانوادگی را وارد کنید."
 );
 
 return;
 
 }
 
+if(!phone){
 
-const customerName =
-prompt(
-"نام و نام خانوادگی:"
+alert(
+"شماره تماس را وارد کنید."
 );
 
-if(!customerName)return;
+return;
 
+}
 
-const phone =
-prompt(
-"شماره تماس:"
+if(!address){
+
+alert(
+"آدرس دقیق را وارد کنید."
 );
 
-if(!phone)return;
+return;
 
+}
 
-const address =
-prompt(
-"آدرس کامل:"
+if(!postalCode){
+
+alert(
+"کد پستی را وارد کنید."
 );
 
-if(!address)return;
+return;
 
+}
+
+if(!cardholderName){
+
+alert(
+"نام صاحب کارت را وارد کنید."
+);
+
+return;
+
+}
+
+if(!recipientName){
+
+alert(
+"نام گیرنده را وارد کنید."
+);
+
+return;
+
+}
 
 const items =
 cart.map(x => ({
@@ -1873,7 +2080,6 @@ quantity:
 x.qty
 
 }));
-
 
 const result =
 await DB.rpc(
@@ -1893,35 +2099,38 @@ p_notes:
 "",
 
 p_items:
-items
+items,
+
+p_postal_code:
+postalCode,
+
+p_cardholder_name:
+cardholderName,
+
+p_recipient_name:
+recipientName
 
 }
 );
 
-
-const orderId =
-result.data;
-
-const error =
-result.error;
-
-
-if(error){
+if(result.error){
 
 console.error(
 "Order error:",
-error
+result.error
 );
 
 alert(
 "ثبت سفارش انجام نشد:\n" +
-error.message
+result.error.message
 );
 
 return;
 
 }
 
+const orderId =
+result.data;
 
 const lines =
 cart.map(x =>
@@ -1929,19 +2138,20 @@ cart.map(x =>
 )
 .join("\n");
 
-
 const message =
 `سلام، برای ثبت این سفارش پیام می‌دهم:
 
 ${lines}
 
-نام: ${customerName}
+نام و نام خانوادگی: ${customerName}
 شماره تماس: ${phone}
-آدرس: ${address}
+آدرس دقیق: ${address}
+کد پستی: ${postalCode}
+نام صاحب کارت: ${cardholderName}
+نام گیرنده: ${recipientName}
 
 کد سفارش:
 ${orderId}`;
-
 
 cart = [];
 
@@ -1949,6 +2159,29 @@ save();
 
 closeCart();
 
+document
+.getElementById("checkoutForm")
+.classList
+.remove("show");
+
+document.querySelector(".checkout")
+.style.display="block";
+
+[
+"checkoutName",
+"checkoutPhone",
+"checkoutAddress",
+"checkoutPostal",
+"checkoutCardholder",
+"checkoutRecipient"
+]
+.forEach(id => {
+
+document
+.getElementById(id)
+.value="";
+
+});
 
 window.open(
 "https://t.me/Muhammad_sarbaz?text=" +
@@ -1956,16 +2189,13 @@ encodeURIComponent(message),
 "_blank"
 );
 
-
 await loadProductsFromDB();
-
 
 alert(
 "سفارش شما با موفقیت ثبت شد.\n\nمشاورین ما به‌زودی با شما تماس خواهند گرفت."
 );
 
 }
-
 
 async function loadMyOrders(){
 
@@ -1975,19 +2205,16 @@ document
 .value
 .trim();
 
-
 const phone =
 document
 .getElementById("ordersPhone")
 .value
 .trim();
 
-
 const resultBox =
 document.getElementById(
 "myOrdersResult"
 );
-
 
 if(!name || !phone){
 
@@ -1998,10 +2225,8 @@ return;
 
 }
 
-
 resultBox.innerHTML =
 '<p style="color:#7b8491;text-align:center">در حال بررسی سفارشات...</p>';
-
 
 const result =
 await DB.rpc(
@@ -2017,13 +2242,11 @@ phone
 }
 );
 
-
 const data =
 result.data;
 
 const error =
 result.error;
-
 
 if(error){
 
@@ -2039,7 +2262,6 @@ return;
 
 }
 
-
 if(!data || !data.length){
 
 resultBox.innerHTML =
@@ -2048,7 +2270,6 @@ resultBox.innerHTML =
 return;
 
 }
-
 
 const statusText = {
 
@@ -2063,7 +2284,6 @@ rejected:
 
 };
 
-
 resultBox.innerHTML =
 data.map(order => {
 
@@ -2074,7 +2294,6 @@ order.created_at
 .toLocaleDateString(
 "fa-IR"
 );
-
 
 return `
 
@@ -2103,7 +2322,6 @@ ${statusText[order.status] || order.status}
 }).join("");
 
 }
-
 
 renderCart();
 
